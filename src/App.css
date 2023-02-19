@@ -1,31 +1,38 @@
+
 .App {
   text-align: center;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
+.App {
+  background-color: #fefbf2;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* font-size: calc(10px + 1.5vmin); */
+  color: black;
+  font-family: 'Ubuntu Mono', monospace;
+  text-align: left;
+}
+
+.title{
+  font-weight: bold;
+  font-size: calc(10px + 3vmin);
+  letter-spacing: 2px;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.body-text{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: calc(10px+.5vmin);
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +42,46 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.card{
+  position:relative;
+}
+
+
+.plus-icon{
+  position:absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+
+.vertical-line{
+  position:relative;
+  left:50px;
+
+
+}
+.border{
+  position:relative;
+}
+
+.right-box{
+  position:absolute;
+  right: -3px;
+  top:-3px;
+  width:4vw;
+  height:100%;
+  background-color: #689581;
+
+}
+
+.bottom-box{
+  position:absolute;
+  bottom:-3px;
+  left:-3px;
+  width:100%;
+  height:7vh;
+  background-color: #ACBC8A;
 }
