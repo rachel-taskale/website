@@ -1,107 +1,138 @@
 import logo from './logo.svg';
 import './App.css';
-import {Box, HStack, VStack, Text, SimpleGrid, Flex, Divider, Spacer, Button,  ButtonGroup, Link, Center, GridItem, interactivity} from '@chakra-ui/react';
-import {AiOutlineStock} from 'react-icons/ai'
+import {Box, 
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  HStack, 
+  VStack, 
+  Text, 
+  SimpleGrid, 
+  Flex, 
+  Divider, 
+  Spacer, 
+  Button,  ButtonGroup, Link, Center, Stack} from '@chakra-ui/react';
+import {AiOutlineStock, AiFillInstagram, AiFillGithub} from 'react-icons/ai'
 import {BiPlusMedical} from 'react-icons/bi'
+import {BsGithub, BsLinkedin} from 'react-icons/bs'
+import {HiArrowNarrowDown} from 'react-icons/hi'
+
+
 
 function App() {
   const projects = [{
     title:'Women Investors Capstone',
     subject:'Product Development',
-    icon:AiOutlineStock
+    icon:AiOutlineStock,
+    description:'ssssssssssssss'
   },
   {
     title:'Digital Ledger Repository',
     subject:'Software Development',
     icon:'',
+    description:'ddddddddddddddddddd'
   },
   {
     title:'Digital Ledger Repository',
     subject:'Software Development',
     icon:'',
+    description:'fffffffffffffffffffff'
   },
-
 ]
+  const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <div className="App">
-     <Box className='header' pt={100} mx='20%'>
+      <Center>
+     <Box className='header' maxW={['95%', '95%', '95%', '75vw']} pt={100}>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-      <Flex py={10} gap={50}>
-        <VStack alignItems='left' maxW={500}>
-          <Box className='title'>
-            Hi! I'm Rachel Taskale
-          </Box>
-          <div class='body-text'>
-            <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            </Text>
-            <Text >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            </Text>
-          </div>
-          
-        </VStack>
-        {/* <Divider className='vertical-line' orientation='vertical' h='10px' w={2}/> */}
+        <SimpleGrid columns={[1,1,1,2,2]} py={10} gap={10} >
+          <Box>
+            <VStack maxW={480} >
+              <div >
+                <Box className='title' >
+                  Hi! I'm Rachel Taskale
+                </Box>
+                <Text className='body-text' lineHeight={1.7}>
+                  Currently working at Broadridge Financial Solutions as a Software Engineer. In my free time, I enjoy working on creative projects and freelance graphic design. You can find some of my work <span fontWeight={900}>here.</span>
+                </Text>
+                <Divider mt={2} colorScheme="red" orientation='vertical' h={10} size={2}/>
+                <Text>
+                  
 
-        <Box w={600} className='border' border='3px solid black' borderRadius={5}>
-          <Box className='right-box'  border='3px solid black' borderRadius={5}></Box>
-          <Box className='bottom-box'  border='3px solid black' borderRadius={5}></Box>
-          
-        </Box>
-      </Flex>
+                </Text>
+              </div>
+            </VStack>
+            
+          </Box>
+
+          <Box w='fit-content' maxW='400px' ml={20}  minW='300px' minH="200px" className='border' border='3px solid black'  bgColor='#ffffff' borderRadius={5}>
+            <Box className='right-box' h='fit-content'  border='3px solid black' borderRadius={5}>
+              <VStack py='15px' spacing={5}>
+                <Link target="_blank" href='https://www.linkedin.com/in/racheltaskale/' color='black'><BsLinkedin className='icon' size='20px' /></Link>
+                <Link target='_blank' href='' color='black'><AiFillInstagram className='icon' size='29px' href=''/></Link>
+                <Link target='_blank' href='' color='black'><BsGithub className='icon' size='25px' href=''/></Link>
+              </VStack>
+            </Box>
+            <Box className='bottom-box'  border='3px solid black' borderRadius={5}>
+              <Center fontWeight='700' letterSpacing={3} fontSize={12} mt='auto'>racheltaskale@gmail.com</Center>
+            </Box>
+          </Box>
+
+        </SimpleGrid>
 
       <HStack mt='5vh'>
         <Text className='title'  fontSize='calc(10px + 1.5vmin)'>Projects</Text>
         <Spacer/>
-        <Button variant='ghost' fontWeight='bold' href='' color='black' bg='ffffff'>More</Button>
+        <Button variant='ghost' fontWeight='bold' href='' color='black' backgroundColor='ffffff00' border='0px'>More<HiArrowNarrowDown/></Button>
       </HStack>
       
-      <SimpleGrid minChildWidth='120px' spacing='40px'>
+      <SimpleGrid minChildWidth={250} spacing='60px'>
         {projects.map(function(item, i){
           return(
-            <Box className="card" minH={170} minW={210}  border='3px solid black' borderRadius={5} backgroundColor='white'>
+            <Box className="card" minH={170}  border='3px solid black' borderRadius={5} backgroundColor='white'>
               <Center>
-                <VStack pl='30px' >
-                  <Box maxW='200px' mt={5} alignItems='center' justifyContent='center'>
-                  <AiOutlineStock className='subject-icon' alignItems='left' size='50px'/>
+                <Stack pl='30px' direction={['column', 'row']}>
+                  <Box maxW='200px' mt={5}  justifyContent='center'>
+                  <AiOutlineStock className='subject-icon' size='50px'/>
                     <Text className='title'  lineHeight={1.5} fontSize='calc(10px + 0.6vmin)' >
                       {item.title}
                     </Text>
-                    <Text  fontSize='calc(10px + 0.3vmin)' mt='-10px'>
+                    <Text fontSize='calc(10px + 0.3vmin)'>
                       {item.subject}
                     </Text>
                   </Box>
-              </VStack>
+              </Stack>
               </Center>
-              <BiPlusMedical className= "plus-icon" position='fixed' size={20}/>    
+              <BiPlusMedical onClick={onOpen} className= "plus-icon" position='fixed' size={20}/> 
+              <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                  <ModalHeader>Modal Title</ModalHeader>
+                  <ModalCloseButton />
+                  <ModalBody>
                     
+                  </ModalBody>
+                  <ModalFooter>
+                    <Button colorScheme='blue' mr={3} onClick={onClose}>
+                      Close
+                    </Button>
+                    <Button variant='ghost'>Secondary Action</Button>
+                  </ModalFooter>
+                </ModalContent>
+              </Modal>
             </Box>
-          
         );})}
-        {/* <Box className="card" minH={170} minW={210}  border='3px solid black' borderRadius={5} backgroundColor='white'>
-          
-          <Center>
-            <VStack>
-              <AiOutlineStock className='subject-icon' size='50px'/>
-              <Box maxW='200px' alignItems='center' pl='30px' justifyContent='center'>
-                <Text className='title' mt='70px' lineHeight={1.5} fontSize='calc(10px + 0.6vmin)' >
-                  Women Investors Capstone
-                </Text>
-                <Text  fontSize='calc(10px + 0.3vmin)' mt='-10px'>
-                  Product Development
-                </Text>
-              </Box>
-          </VStack>
-          </Center>
-          <BiPlusMedical className= "plus-icon" position='fixed' size={20}/>    
-                
-        </Box> */}
-
       </SimpleGrid>
 
      </Box>
+     </Center>
     </div>
   );
 }
