@@ -81,7 +81,7 @@ function App() {
   return (
     <div className="App">
       <Center>
-     <Box className='header' maxW={['93%', '93%', '93%', '75vw']} pt={100}>
+     <Box className='header' maxW={['93%', '93%', '93%', '75vw']} pt={70}>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet"/>
@@ -95,12 +95,30 @@ function App() {
                 <Text className='body-text' lineHeight={1.7}>
                   Currently working at Broadridge Financial Solutions as a Software Engineer. In my free time, I enjoy working on creative projects and freelance graphic design. You can find some of my work <span fontWeight={900}>here.</span>
                 </Text>
-                <HStack>
-                  <Box className='vertical-line'>
+                <Box mt={5}>
+                <HStack maxH={20} overflow='scroll'> 
+                  <Box className='vertical-line' mr={50}>
                   </Box>
-                  <Text>
-                  </Text>
+          
+                  <Box >
+                    <Text>
+                      ssssssssssssss
+                    </Text>
+                    <Text>
+                      ssssssssssssss
+                    </Text>
+                    <Text>
+                      ssssssssssssss
+                    </Text>
+                    <Text>
+                      ssssssssssssss
+                    </Text>
+                    <Text>
+                      ssssssssssssss
+                    </Text>
+                  </Box>
                 </HStack>
+                </Box>
               </div>
             </VStack>
             

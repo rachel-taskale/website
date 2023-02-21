@@ -101,7 +101,25 @@
 
 .vertical-line{
   margin-top: 2vh;
-  height:12.5vh;
+  height: 100px;
   border-left:#000000 2px solid;
+}
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f100; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.4); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
