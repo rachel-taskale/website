@@ -14,6 +14,7 @@ import {Box,
   Text, 
   SimpleGrid, 
   Flex, 
+  Icon,
   Divider, 
   Spacer, 
   Button,  ButtonGroup, Link, Center, Stack} from '@chakra-ui/react';
@@ -28,19 +29,19 @@ function App() {
   const projects = [{
     title:'Women Investors Capstone',
     subject:'Product Development',
-    icon:AiOutlineStock,
+    icon: AiOutlineStock,
     description:'ssssssssssssss'
   },
   {
     title:'Digital Ledger Repository',
     subject:'Software Development',
-    icon:'',
+    icon: AiFillGithub,
     description:'ddddddddddddddddddd'
   },
   {
     title:'Digital Ledger Repository',
     subject:'Software Development',
-    icon:'',
+    icon:AiFillInstagram,
     description:'fffffffffffffffffffff'
   },
 ]
@@ -74,14 +75,14 @@ function App() {
 
           <Box w='fit-content' maxW='400px' ml={20}  minW='300px' minH="200px" className='border' border='3px solid black'  bgColor='#ffffff' borderRadius={5}>
             <Box className='right-box' h='fit-content'  border='3px solid black' borderRadius={5}>
-              <VStack py='15px' spacing={5}>
+              <VStack py='15px' spacing={5} h='full'>
                 <Link target="_blank" href='https://www.linkedin.com/in/racheltaskale/' color='black'><BsLinkedin className='icon' size='20px' /></Link>
                 <Link target='_blank' href='' color='black'><AiFillInstagram className='icon' size='29px' href=''/></Link>
                 <Link target='_blank' href='' color='black'><BsGithub className='icon' size='25px' href=''/></Link>
               </VStack>
             </Box>
             <Box className='bottom-box'  border='3px solid black' borderRadius={5}>
-              <Center fontWeight='700' letterSpacing={3} fontSize={12} mt='auto'>racheltaskale@gmail.com</Center>
+              <Center fontWeight='700' letterSpacing={3} fontSize={12} mt='1vw'>racheltaskale@gmail.com</Center>
             </Box>
           </Box>
 
@@ -100,7 +101,7 @@ function App() {
               <Center>
                 <Stack pl='30px' direction={['column', 'row']}>
                   <Box maxW='200px' mt={5}  justifyContent='center'>
-                  <AiOutlineStock className='subject-icon' size='50px'/>
+                  <Icon as={item.icon} className='subject-icon'/>
                     <Text className='title'  lineHeight={1.5} fontSize='calc(10px + 0.6vmin)' >
                       {item.title}
                     </Text>
