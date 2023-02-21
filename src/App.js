@@ -46,10 +46,42 @@ function App() {
   },
 ]
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const CustomModal = ({ showModalButtonText, modalHeader, modalBody }) => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    return (
+      <>
+        <BiPlusMedical onClick={onOpen} className= "plus-icon" position='fixed' size={20}>
+          {showModalButtonText}
+        </BiPlusMedical>
+        <Modal isOpen={isOpen} onClose={onClose}>
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>{modalHeader}</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody>{modalBody}</ModalBody>
+  
+            <ModalFooter>
+              <Button variant="ghost" mr={3} onClick={onClose}>
+                Cancel
+              </Button>
+              <Button
+                colorScheme="red"
+                onClick={() => {
+                  alert(1);
+                }}
+              >
+                Delete
+              </Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      </>
+    );
+  }
   return (
     <div className="App">
       <Center>
-     <Box className='header' maxW={['95%', '95%', '95%', '75vw']} pt={100}>
+     <Box className='header' maxW={['93%', '93%', '93%', '75vw']} pt={100}>
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet"/>
@@ -63,25 +95,26 @@ function App() {
                 <Text className='body-text' lineHeight={1.7}>
                   Currently working at Broadridge Financial Solutions as a Software Engineer. In my free time, I enjoy working on creative projects and freelance graphic design. You can find some of my work <span fontWeight={900}>here.</span>
                 </Text>
-                <Divider mt={2} colorScheme="red" orientation='vertical' h={10} size={2}/>
-                <Text>
-                  
-
-                </Text>
+                <HStack>
+                  <Box className='vertical-line'>
+                  </Box>
+                  <Text>
+                  </Text>
+                </HStack>
               </div>
             </VStack>
             
           </Box>
 
-          <Box w='fit-content' maxW='400px' ml={20}  minW='300px' minH="200px" className='border' border='3px solid black'  bgColor='#ffffff' borderRadius={5}>
-            <Box className='right-box' h='fit-content'  border='3px solid black' borderRadius={5}>
-              <VStack py='15px' spacing={5} h='full'>
+          <Box w='full' maxW='400px' ml={20}  minW='300px' minH="200px" className='border' border='3px solid black'  bgColor='#ffffff' borderRadius={5}>
+            <Box className='right-box' h='full'  border='3px solid black' borderRadius={5}>
+              <VStack py='15px' spacing={8} h='full'>
                 <Link target="_blank" href='https://www.linkedin.com/in/racheltaskale/' color='black'><BsLinkedin className='icon' size='20px' /></Link>
                 <Link target='_blank' href='' color='black'><AiFillInstagram className='icon' size='29px' href=''/></Link>
                 <Link target='_blank' href='' color='black'><BsGithub className='icon' size='25px' href=''/></Link>
               </VStack>
             </Box>
-            <Box className='bottom-box'  border='3px solid black' borderRadius={5}>
+            <Box className='bottom-box' width='full'  border='3px solid black' borderRadius={5}>
               <Center fontWeight='700' letterSpacing={3} fontSize={12} mt='1vw'>racheltaskale@gmail.com</Center>
             </Box>
           </Box>
@@ -111,23 +144,8 @@ function App() {
                   </Box>
               </Stack>
               </Center>
-              <BiPlusMedical onClick={onOpen} className= "plus-icon" position='fixed' size={20}/> 
-              <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent>
-                  <ModalHeader>Modal Title</ModalHeader>
-                  <ModalCloseButton />
-                  <ModalBody>
-                    
-                  </ModalBody>
-                  <ModalFooter>
-                    <Button colorScheme='blue' mr={3} onClick={onClose}>
-                      Close
-                    </Button>
-                    <Button variant='ghost'>Secondary Action</Button>
-                  </ModalFooter>
-                </ModalContent>
-              </Modal>
+              <CustomModal  modalHeader={item.description} className= "plus-icon" position='fixed' size={20}/> 
+             
             </Box>
         );})}
       </SimpleGrid>
