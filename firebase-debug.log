@@ -1,0 +1,42 @@
+[debug] [2023-02-20T21:55:34.440Z] ----------------------------------------------------------------------
+[debug] [2023-02-20T21:55:34.442Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\rache\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only hosting
+[debug] [2023-02-20T21:55:34.443Z] CLI Version:   11.23.1
+[debug] [2023-02-20T21:55:34.443Z] Platform:      win32
+[debug] [2023-02-20T21:55:34.443Z] Node Version:  v16.15.1
+[debug] [2023-02-20T21:55:34.445Z] Time:          Mon Feb 20 2023 16:55:34 GMT-0500 (Eastern Standard Time)
+[debug] [2023-02-20T21:55:34.445Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-02-20T21:55:34.566Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-02-20T21:55:34.566Z] > authorizing via signed-in user (racheltaskale@gmail.com)
+[debug] [2023-02-20T21:55:34.566Z] [iam] checking project personal-website-93d39 for permissions ["firebase.projects.get"]
+[debug] [2023-02-20T21:55:34.568Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-website-93d39:testIamPermissions [none]
+[debug] [2023-02-20T21:55:34.569Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-website-93d39:testIamPermissions x-goog-quota-user=projects/personal-website-93d39
+[debug] [2023-02-20T21:55:34.569Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-website-93d39:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-02-20T21:55:35.014Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-website-93d39:testIamPermissions 200
+[debug] [2023-02-20T21:55:35.014Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-website-93d39:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-02-20T21:55:35.017Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-website-93d39 [none]
+[debug] [2023-02-20T21:55:35.639Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-website-93d39 200
+[debug] [2023-02-20T21:55:35.640Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-website-93d39 {"projectId":"personal-website-93d39","projectNumber":"714070666101","displayName":"Personal-Website","name":"projects/personal-website-93d39","resources":{"hostingSite":"personal-website-93d39"},"state":"ACTIVE","etag":"1_0d0314b3-d37c-4a86-834d-1ff14bbcf19c"}
+[debug] [2023-02-20T21:55:35.647Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/personal-website-93d39/sites 
+[debug] [2023-02-20T21:55:46.417Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/personal-website-93d39/sites 200
+[debug] [2023-02-20T21:55:46.417Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/personal-website-93d39/sites {"sites":[{"name":"projects/personal-website-93d39/sites/personal-website-93d39","defaultUrl":"https://personal-website-93d39.web.app","appId":"1:714070666101:web:8691373d1694aa7319c13c","type":"DEFAULT_SITE"}]}
+[debug] [2023-02-20T21:55:46.418Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-website-93d39/webApps/1:714070666101:web:8691373d1694aa7319c13c/config [none]
+[debug] [2023-02-20T21:55:47.254Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-website-93d39/webApps/1:714070666101:web:8691373d1694aa7319c13c/config 200
+[debug] [2023-02-20T21:55:47.255Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-website-93d39/webApps/1:714070666101:web:8691373d1694aa7319c13c/config {"projectId":"personal-website-93d39","appId":"1:714070666101:web:8691373d1694aa7319c13c","storageBucket":"personal-website-93d39.appspot.com","apiKey":"AIzaSyDG_DT7hMELSSU2gnyaLn8Yhn4Pz83z1ew","authDomain":"personal-website-93d39.firebaseapp.com","messagingSenderId":"714070666101","measurementId":"G-3WDHJTED1L"}
+[debug] [2023-02-20T21:55:47.299Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/personal-website-93d39 [none]
+[debug] [2023-02-20T21:55:47.858Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/personal-website-93d39 200
+[debug] [2023-02-20T21:55:47.858Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/personal-website-93d39 {"projectId":"personal-website-93d39","projectNumber":"714070666101","displayName":"Personal-Website","name":"projects/personal-website-93d39","resources":{"hostingSite":"personal-website-93d39"},"state":"ACTIVE","etag":"1_0d0314b3-d37c-4a86-834d-1ff14bbcf19c"}
+[info] i  hosting[personal-website-93d39]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[personal-website-93d39]: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[info] i  hosting: 127.0.0.1 - - [20/Feb/2023:21:56:14 +0000] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 500 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [20/Feb/2023:21:56:14 +0000] \"GET /%PUBLIC_URL%/favicon.ico HTTP/1.1\" 500 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [20/Feb/2023:21:56:17 +0000] "GET / HTTP/1.1" 200 303 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [20/Feb/2023:21:56:17 +0000] \"GET / HTTP/1.1\" 200 303 \"-\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [20/Feb/2023:21:56:17 +0000] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 500 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [20/Feb/2023:21:56:17 +0000] \"GET /%PUBLIC_URL%/favicon.ico HTTP/1.1\" 500 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [20/Feb/2023:22:18:20 +0000] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 500 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [20/Feb/2023:22:18:20 +0000] \"GET /%PUBLIC_URL%/favicon.ico HTTP/1.1\" 500 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [21/Feb/2023:00:14:47 +0000] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 500 - "http://localhost:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [21/Feb/2023:00:14:47 +0000] \"GET /%PUBLIC_URL%/favicon.ico HTTP/1.1\" 500 - \"http://localhost:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36\""}}
+[info] Shutting down...
+[debug] [2023-02-21T00:15:20.006Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\rache\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[error] 
+[error] Error: An unexpected error has occurred.
