@@ -1,176 +1,212 @@
-import logo from './logo.svg';
-import './App.css';
-import {Box, 
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-  useDisclosure,
-  HStack, 
-  VStack, 
-  Text, 
-  SimpleGrid, 
-  Flex, 
+import logo from "./logo.svg";
+import "./App.css";
+
+import React from "react";
+import {
+  Box,
+
+  HStack,
+  VStack,
+  Text,
+  SimpleGrid,
+  Flex,
   Icon,
-  Divider, 
-  Spacer, 
-  Button,  ButtonGroup, Link, Center, Stack} from '@chakra-ui/react';
-import {AiOutlineStock, AiFillInstagram, AiFillGithub} from 'react-icons/ai'
-import {BiPlusMedical} from 'react-icons/bi'
-import {BsGithub, BsLinkedin} from 'react-icons/bs'
-import {HiArrowNarrowDown} from 'react-icons/hi'
+  Divider,
+  Wrap,
+  WrapItem,
+  Spacer,
+  Button,
+  ButtonGroup,
+  Link,
+  Center,
+  Stack,
+  Image,
+  IconButton,
+  Card,
+  CardHeader,
+  CardBody,
+  CardBodyProps,
+  CardFooter,
+  Heading,
 
+  Highlight,
+  LinkOverlay,
+} from "@chakra-ui/react";
 
+const CustomCard = (props) => {
+  return (
+    <Card
+      maxW={["xl", "lg"]}
+      minH={['xl', 'lg']}
+      variant="outline"
+      border="2px solid black"
+      borderRadius="xl"
+    >
+      <CardBody>
+        <Image
+          width='500px'
+          height='344px'
+          src=''
+          alt={props.title}
+          src={props.img}
+          // objectFit='cover'
+          // border='1px solid black'
+          borderRadius="lg"
+          
+        />
+        <Stack  spacing="3" >
+          <Heading>
+            <Text className="title"  fontSize="2xl">
+              {props.title}
+            </Text>
+            <Text className="subtitle" fontWeight='500' color="#A259FF" fontSize="sm">
+              {props.subtitle}
+            </Text>
+          </Heading>
+         
+        </Stack>
+      </CardBody>
+
+      <CardFooter>
+        <HStack width='full'>
+          <Spacer />
+          <Link href={props.github} target="_blank">
+            <Button
+              className="title"
+              fontWeight="bold"
+              variant="outline"
+              right={0}
+              border="2px solid black"
+              bgColor='#03D18290'
+              color="black"
+              _hover={{bgColor:'#03D182'}}
+            >
+              {props.buttonName}
+            </Button>
+          </Link>
+        </HStack>
+      </CardFooter>
+    </Card>
+  );
+};
 
 function App() {
-  const projects = [{
-    title:'Women Investors Capstone',
-    subject:'Product Development',
-    icon: AiOutlineStock,
-    description:'ssssssssssssss'
-  },
-  {
-    title:'Digital Ledger Repository',
-    subject:'Software Development',
-    icon: AiFillGithub,
-    description:'ddddddddddddddddddd'
-  },
-  {
-    title:'Digital Ledger Repository',
-    subject:'Software Development',
-    icon:AiFillInstagram,
-    description:'fffffffffffffffffffff'
-  },
-]
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const CustomModal = ({ showModalButtonText, modalHeader, modalBody }) => {
-    const { isOpen, onOpen, onClose } = useDisclosure();
-    return (
-      <>
-        <BiPlusMedical onClick={onOpen} className= "plus-icon" position='fixed' size={20}>
-          {showModalButtonText}
-        </BiPlusMedical>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>{modalHeader}</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>{modalBody}</ModalBody>
-  
-            <ModalFooter>
-              <Button variant="ghost" mr={3} onClick={onClose}>
-                Cancel
-              </Button>
-              <Button
-                colorScheme="red"
-                onClick={() => {
-                  alert(1);
-                }}
-              >
-                Delete
-              </Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-      </>
-    );
-  }
+  const projects = [
+    {
+      title: "Women Investors Project",
+      subtitle: "Product Development",
+      //https://drive.google.com/file/d/185x1ykc6KPolb-tKm5L6nVYi-E2fI67f/view?usp=sharing
+      img: 'https://drive.google.com/uc?id=185x1ykc6KPolb-tKm5L6nVYi-E2fI67f',
+      description:
+        "Research and development of features centered around making the world of finance more equitable for women investors",
+      tech: "postgres + nodejs + react",
+      github:
+        "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/logos/metaworld-1000x1000.svg",
+        buttonName:'Read Case Study'
+    },
+    {
+      title: "Metaworld",
+      subtitle: "Design",
+      // https://drive.google.com/file/d/1s2LDGXSoHpx0z8SsouJvbQiolJ9jCvNj/view?usp=sharing
+      img: 'https://drive.google.com/uc?id=1s2LDGXSoHpx0z8SsouJvbQiolJ9jCvNj',
+      description: "Logo designed for Farama Foundation.",
+      tech: "postgres + nodejs + react",
+      github:
+        "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/logos/metaworld-1000x1000.svg",
+        buttonName:'Read Case Study'
+    },
+    {
+      title: "Staffing Dashboard",
+      subtitle: "UI + Dev",
+      // https://drive.google.com/file/d/190XaY8JkGCcUQFSVE40Pkty_JKW0ZUiX/view?usp=sharing
+      img: "https://drive.google.com/uc?id=190XaY8JkGCcUQFSVE40Pkty_JKW0ZUiX",
+      description:
+        "Dashboard developed to allow the user to manage clients & staff to fulfill private events",
+      tech: "postgres + nodejs + react",
+      github: "https://github.com/rachel-taskale/staffing",
+      buttonName:'Read Case Study'
+    },
+    {
+      title: "Kestrel",
+      subtitle: "Design",
+      // https://drive.google.com/file/d/1qvSAU6rF6F5pau1QoAJoL8EUv_YA99fg/view?usp=sharing
+      img: 'https://drive.google.com/uc?id=1qvSAU6rF6F5pau1QoAJoL8EUv_YA99fg',
+      description:
+        "Rebranding logo design for an agricultural startup seeking to easy the process of loans for small farmers",
+      tech: "postgres + nodejs + react",
+      github:
+        "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/logos/Kestrel%20Final.svg",
+        buttonName:'Read Case Study'
+        
+    },
+    {
+      title: "High on Self Esteem",
+      subtitle: "Art",
+      // https://drive.google.com/file/d/1zZe-q6GmuoQbeDoklFxRijoo800XaDRW/view?usp=sharing
+      img: 'https://drive.google.com/uc?id=1zZe-q6GmuoQbeDoklFxRijoo800XaDRW',
+      description: "",
+      tech: "postgres + nodejs + react",
+      github: "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/art/Vicious%20Summer%20faces.png",
+      buttonName:'View Drawing'
+    },
+    {
+      title: "Broken Record Love",
+      subtitle: "Art",
+      img: 'https://drive.google.com/uc?id=1mq55T5MfOGa_-AboDu2YEunn49-k39M5',
+      description: "",
+      tech: "postgres + nodejs + react",
+      github: "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/art/Vicious%20Summer%20skull.png",
+      buttonName:'View Drawing'
+    },
+  ];
+
   return (
-    <div className="App">
-      <Center>
-     <Box className='header' maxW={['93%', '93%', '93%', '75vw']} pt={70}>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-        <SimpleGrid columns={[1,1,1,2,2]} py={10} gap={10} >
+    <Box className="App">
+      <Button className='title' position='absolute' right='10' top='10' width='fit-content' px='2' border='2px solid black' bgColor='#1CBCFF90'>View Resume</Button>
+      <Box mx="7.5%" pt= '30%' my="7.5%">
+        <Box textAlign='center'>
+   
+           <Text fontSize={["4xl","2xl"]} className="title"  >
+            <Highlight
+              query="Rachel Taskale"
+              styles={{
+                px: "1",
+                py: "1",
+                bg: "orange.200",
+                color: "black",
+                borderRadius: "md",
+                // border: "2px solid black",
+              }}
+            >
+              Rachel Taskale is a developer + designer based out of New York.
+            </Highlight>
+            </Text>
+            <Text>In her free time, you can find her traveling, drawing,</Text>
+
+            </Box>          
+        <Spacer minHeight="200px" />
+          <Wrap spacing="50px" display="flex" justify='center'>
+            {projects.map((item) => (
+              <CustomCard
+                title={item.title}
+                subtitle={item.subtitle}
+                img={item.img}
+                description={item.description}
+                tech={item.tech}
+                github={item.github}
+                buttonName = {item.buttonName}
+              />
+            ))}
+          </Wrap>
           <Box>
-            <VStack maxW={480} >
-              <div >
-                <Box className='title' >
-                  Hi! I'm Rachel Taskale
-                </Box>
-                <Text className='body-text' lineHeight={1.7}>
-                  Currently working at Broadridge Financial Solutions as a Software Engineer. In my free time, I enjoy working on creative projects and freelance graphic design. You can find some of my work <span fontWeight={900}>here.</span>
-                </Text>
-                <Box mt={5}>
-                <HStack maxH={20} overflow='scroll'> 
-                  <Box className='vertical-line' mr={50}>
-                  </Box>
-          
-                  <Box >
-                    <Text>
-                      ssssssssssssss
-                    </Text>
-                    <Text>
-                      ssssssssssssss
-                    </Text>
-                    <Text>
-                      ssssssssssssss
-                    </Text>
-                    <Text>
-                      ssssssssssssss
-                    </Text>
-                    <Text>
-                      ssssssssssssss
-                    </Text>
-                  </Box>
-                </HStack>
-                </Box>
-              </div>
-            </VStack>
-            
+            <Divider width='full'/>
+              <Text className="title" fontSize='2xl' mt='100px'>About Rachel</Text>
+              <Text className="subtitle">ssss</Text>
           </Box>
-
-          <Box w='full' maxW='400px' ml={20}  minW='300px' minH="200px" className='border' border='3px solid black'  bgColor='#ffffff' borderRadius={5}>
-            <Box className='right-box' h='full'  border='3px solid black' borderRadius={5}>
-              <VStack py='15px' spacing={8} h='full'>
-                <Link target="_blank" href='https://www.linkedin.com/in/racheltaskale/' color='black'><BsLinkedin className='icon' size='20px' /></Link>
-                <Link target='_blank' href='' color='black'><AiFillInstagram className='icon' size='29px' href=''/></Link>
-                <Link target='_blank' href='' color='black'><BsGithub className='icon' size='25px' href=''/></Link>
-              </VStack>
-            </Box>
-            <Box className='bottom-box' width='full'  border='3px solid black' borderRadius={5}>
-              <Center fontWeight='700' letterSpacing={3} fontSize={12} mt='1vw'>racheltaskale@gmail.com</Center>
-            </Box>
-          </Box>
-
-        </SimpleGrid>
-
-      <HStack mt='5vh'>
-        <Text className='title'  fontSize='calc(10px + 1.5vmin)'>Projects</Text>
-        <Spacer/>
-        <Button variant='ghost' fontWeight='bold' href='' color='black' backgroundColor='ffffff00' border='0px'>More<HiArrowNarrowDown/></Button>
-      </HStack>
       
-      <SimpleGrid minChildWidth={250} spacing='60px'>
-        {projects.map(function(item, i){
-          return(
-            <Box className="card" minH={170}  border='3px solid black' borderRadius={5} backgroundColor='white'>
-              <Center>
-                <Stack pl='30px' direction={['column', 'row']}>
-                  <Box maxW='200px' mt={5}  justifyContent='center'>
-                  <Icon as={item.icon} className='subject-icon'/>
-                    <Text className='title'  lineHeight={1.5} fontSize='calc(10px + 0.6vmin)' >
-                      {item.title}
-                    </Text>
-                    <Text fontSize='calc(10px + 0.3vmin)'>
-                      {item.subject}
-                    </Text>
-                  </Box>
-              </Stack>
-              </Center>
-              <CustomModal  modalHeader={item.description} className= "plus-icon" position='fixed' size={20}/> 
-             
-            </Box>
-        );})}
-      </SimpleGrid>
-
-     </Box>
-     </Center>
-    </div>
+      </Box>
+      
+    </Box>
   );
 }
 
