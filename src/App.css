@@ -33,13 +33,19 @@
 }
 
 .subtitle{
-  font-family: 'Fragment mono';
-  font-weight: bold;
+  font-family: 'Inter';
+  /* font-weight: bold; */
+  /* letter-spacing: 1em; */
 }
 
 /* .cusButton{
   
 } */
+
+
+.card-subtitle{
+  font-family: 'Fragment Mono';
+}
 
 .App-link {
   color: #61dafb;

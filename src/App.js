@@ -31,6 +31,7 @@ import {
 
   Highlight,
   LinkOverlay,
+  Avatar,
 } from "@chakra-ui/react";
 
 const CustomCard = (props) => {
@@ -49,8 +50,7 @@ const CustomCard = (props) => {
           src=''
           alt={props.title}
           src={props.img}
-          // objectFit='cover'
-          // border='1px solid black'
+
           borderRadius="lg"
           
         />
@@ -59,7 +59,7 @@ const CustomCard = (props) => {
             <Text className="title"  fontSize="2xl">
               {props.title}
             </Text>
-            <Text className="subtitle" fontWeight='500' color="#A259FF" fontSize="sm">
+            <Text className="card-subtitle" fontWeight='500' color="#A259FF" fontSize="sm">
               {props.subtitle}
             </Text>
           </Heading>
@@ -181,7 +181,7 @@ function App() {
               Rachel Taskale is a developer + designer based out of New York.
             </Highlight>
             </Text>
-            <Text>In her free time, you can find her traveling, drawing,</Text>
+            <Text className="subtitle">In her free time, you can find her traveling, drawing,</Text>
 
             </Box>          
         <Spacer minHeight="200px" />
@@ -200,8 +200,29 @@ function App() {
           </Wrap>
           <Box>
             <Divider width='full'/>
-              <Text className="title" fontSize='2xl' mt='100px'>About Rachel</Text>
-              <Text className="subtitle">ssss</Text>
+            <Spacer h='200px'/>
+            <Wrap border='1px solid black' alignItems='left'>
+              <VStack maxWidth='50%' textAlign='left' display='flex' >
+                <Avatar />
+                <Box >
+                <Text className="title" fontSize='2xl' mt='100px'>Hi! I'm Rachel</Text>
+                <Text className="subtitle" mt='10px' >I work as a Software Engineer at Broadridge Financial Solutions. In my free time, I love all things art and design. You can find my inspirations here and some funny UIs I've designed here. Currently, I am taking a Illustration class at SVA. 
+                <Spacer h='10px'></Spacer>
+                
+                Hope you enjoyed my portfolio :)</Text>
+                </Box>
+              </VStack>
+              <VStack>
+                <Spacer></Spacer>
+                <Text>Reach out!</Text>
+                <Input placeholder='Name' />
+                <Input placeholder='email' />
+                {/* <textarea name="paragraph_text" cols="50" rows="10"></textarea>/// */}
+
+              </VStack>
+
+            </Wrap>
+              
           </Box>
       
       </Box>
