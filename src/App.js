@@ -21,6 +21,7 @@ import {
   Center,
   Stack,
   Image,
+  Input,
   IconButton,
   Card,
   CardHeader,
@@ -28,7 +29,7 @@ import {
   CardBodyProps,
   CardFooter,
   Heading,
-
+  Textarea,
   Highlight,
   LinkOverlay,
   Avatar,
@@ -162,7 +163,17 @@ function App() {
 
   return (
     <Box className="App">
-      <Button className='title' position='absolute' right='10' top='10' width='fit-content' px='2' border='2px solid black' bgColor='#1CBCFF90'>View Resume</Button>
+      <Button className='title' 
+        position='absolute' 
+        right='10' 
+        top='10' 
+        width='fit-content' 
+        px='2' 
+        border='2px solid black' 
+        bgColor='#03D18290'
+        _hover={{bgColor: '#03D182'}}
+        
+        >View Resume</Button>
       <Box mx="7.5%" pt= '30%' my="7.5%">
         <Box textAlign='center'>
    
@@ -178,10 +189,10 @@ function App() {
                 // border: "2px solid black",
               }}
             >
-              Rachel Taskale is a developer + designer based out of New York.
+              Rachel Taskale, developer + designer based out of New York.
             </Highlight>
             </Text>
-            <Text className="subtitle">In her free time, you can find her traveling, drawing,</Text>
+            <Text className="subtitle">I build accessible, inclusive products and design experiences for the web</Text>
 
             </Box>          
         <Spacer minHeight="200px" />
@@ -201,24 +212,25 @@ function App() {
           <Box>
             <Divider width='full'/>
             <Spacer h='200px'/>
-            <Wrap border='1px solid black' alignItems='left'>
-              <VStack maxWidth='50%' textAlign='left' display='flex' >
+            <Wrap border='1px solid black' alignItems='left' textAlign='left' spacing="50px" >
+              <VStack maxW={["xl", "lg"]}  h='fit-content' textAlign='left' display='flex' >
                 <Avatar />
                 <Box >
-                <Text className="title" fontSize='2xl' mt='100px'>Hi! I'm Rachel</Text>
-                <Text className="subtitle" mt='10px' >I work as a Software Engineer at Broadridge Financial Solutions. In my free time, I love all things art and design. You can find my inspirations here and some funny UIs I've designed here. Currently, I am taking a Illustration class at SVA. 
+                <Text className="title" fontSize='2xl' mt='100px'>About Me</Text>
+                <Text className="subtitle" mt='10px' >I work as a Software Engineer at Broadridge Financial Solutions. In my free time, I love all things art and design. You can find my inspirations here and some funny UIs I've designed here.
                 <Spacer h='10px'></Spacer>
-                
-                Hope you enjoyed my portfolio :)</Text>
+                When I'm not at my computer, I'm usually drawing, hanging out with friends in the city, or planning my next trip.
+                <Spacer h='10px'></Spacer>
+                Hope you enjoyed my portfolio :)               
+                </Text>
                 </Box>
               </VStack>
-              <VStack>
+              <VStack display='flex' maxW={["xl", "lg"]}  h='fit-content'>
                 <Spacer></Spacer>
-                <Text>Reach out!</Text>
-                <Input placeholder='Name' />
+                <Text className='title' textAlign='left' border='1px solid black'>Reach out!</Text>
+                <Input placeholder='name' width='fit-content' />
                 <Input placeholder='email' />
-                {/* <textarea name="paragraph_text" cols="50" rows="10"></textarea>/// */}
-
+                <Textarea placeholder='Here is a sample placeholder' />
               </VStack>
 
             </Wrap>
