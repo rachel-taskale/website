@@ -9,6 +9,7 @@ import {
   VStack,
   Text,
   SimpleGrid,
+  Grid,
   Flex,
   Icon,
   Divider,
@@ -48,7 +49,6 @@ const CustomCard = (props) => {
         <Image
           width='500px'
           height='344px'
-          src=''
           alt={props.title}
           src={props.img}
 
@@ -57,10 +57,10 @@ const CustomCard = (props) => {
         />
         <Stack  spacing="3" >
           <Heading>
-            <Text className="title"  fontSize="2xl">
+            <Text className="header"  fontWeight='extrabold' fontSize="2xl">
               {props.title}
             </Text>
-            <Text className="card-subtitle" fontWeight='500' color="#A259FF" fontSize="sm">
+            <Text className="subtitle" color="#A259FF" fontSize="sm">
               {props.subtitle}
             </Text>
           </Heading>
@@ -73,8 +73,7 @@ const CustomCard = (props) => {
           <Spacer />
           <Link href={props.github} target="_blank">
             <Button
-              className="title"
-              fontWeight="bold"
+              className="subtitle"
               variant="outline"
               right={0}
               border="2px solid black"
@@ -162,6 +161,8 @@ function App() {
   ];
 
   return (
+
+
     <Box className="App">
       <Button className='title' 
         position='absolute' 
@@ -175,28 +176,32 @@ function App() {
         
         >View Resume</Button>
       <Box mx="7.5%" pt= '30%' my="7.5%">
-        <Box textAlign='center'>
+        <Box textAlign='left'>
    
-           <Text fontSize={["4xl","2xl"]} className="title"  >
+           <Text fontSize={["4xl","2xl"]} className="header" py='1' fontWeight='extrabold' >
             <Highlight
               query="Rachel Taskale"
               styles={{
                 px: "1",
-                py: "1",
+                py: ".5",
                 bg: "orange.200",
                 color: "black",
                 borderRadius: "md",
-                // border: "2px solid black",
+                border: "2px solid black",
               }}
             >
               Rachel Taskale, developer + designer based out of New York.
             </Highlight>
             </Text>
-            <Text className="subtitle">I build accessible, inclusive products and design experiences for the web</Text>
+            <Text className="subtitle">I build accessible, inclusive products and experiences for the web</Text>
 
             </Box>          
         <Spacer minHeight="200px" />
-          <Wrap spacing="50px" display="flex" justify='center'>
+        <HStack mb='100px'>
+        <Text className="header-2"> Work</Text>
+        <Divider orientation="horizontal" colorScheme='#000000' wei />
+        </HStack>
+          <Wrap spacing="20px" display="flex" justify='center'>
             {projects.map((item) => (
               <CustomCard
                 title={item.title}
@@ -216,8 +221,8 @@ function App() {
               <VStack maxW={["xl", "lg"]}  h='fit-content' textAlign='left' display='flex' >
                 <Avatar />
                 <Box >
-                <Text className="title" fontSize='2xl' mt='100px'>About Me</Text>
-                <Text className="subtitle" mt='10px' >I work as a Software Engineer at Broadridge Financial Solutions. In my free time, I love all things art and design. You can find my inspirations here and some funny UIs I've designed here.
+                <Text className="header"  fontWeight='extrabold' fontSize='2xl' mt='100px'>About Me</Text>
+                <Text className="body-text" mt='10px' >I work as a Software Engineer at Broadridge Financial Solutions. In my free time, I love all things art and design. You can find my inspirations here and some funny UIs I've designed here.
                 <Spacer h='10px'></Spacer>
                 When I'm not at my computer, I'm usually drawing, hanging out with friends in the city, or planning my next trip.
                 <Spacer h='10px'></Spacer>
@@ -225,10 +230,10 @@ function App() {
                 </Text>
                 </Box>
               </VStack>
-              <VStack display='flex' maxW={["xl", "lg"]}  h='fit-content'>
-                <Spacer></Spacer>
-                <Text className='title' textAlign='left' border='1px solid black'>Reach out!</Text>
-                <Input placeholder='name' width='fit-content' />
+              <VStack display='flex' alightContent='left' maxW={["xl", "lg"]}  h='fit-content' width='full' border='1px solid black'>
+                <Spacer minHeight={{sm:'0px', md:'150px'}}></Spacer>
+                <Text className='title' textAlign='left' width='full' border='1px solid black'>Reach out!</Text>
+                <Input placeholder='name' width='100%' />
                 <Input placeholder='email' />
                 <Textarea placeholder='Here is a sample placeholder' />
               </VStack>

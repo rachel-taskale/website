@@ -7,6 +7,37 @@
 }
 
 
+/* Font Loading */
+@font-face {
+  font-family: "Chapeau-Black";
+  src: url("./fonts/ChapeauWEB-Black.woff") format("woff");
+  }
+
+@font-face {
+  font-family: "Chapeau-Medium";
+  src: url("./fonts/ChapeauWEB-Medium.woff") format("woff");
+  }
+
+
+@font-face {
+  font-family: "SuisseNeue-Regular";
+  src: url("./fonts/SuisseNeue-Regular.woff") format("woff"),
+  url("./fonts/SuisseNeue-Regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Ogg";
+    src: url("./fonts/Ogg-Regular.woff") format("woff"),
+    url("./fonts/Ogg-Regular.woff2") format("woff2");
+    }
+  
+/* Focus */
+*:focus {
+  outline: var(--projcolor) auto 3px;
+}
+ 
+
+
 
 .App {
   /* background-color: #fefbf2; */
@@ -21,104 +52,34 @@
   text-align: left;
 }
 
-
-
-.title{
-  /* font-weight:  bolder; */
-  font-family: 'Roboto Slab';
-  font-weight: 900;
-  /* letter-spacing: 2px; */
+.header{
+  font-family: 'Ogg';  
 
 
 }
+
+.header-2{
+  font-family: 'Chapeau-Black';
+}
+
 
 .subtitle{
-  font-family: 'Inter';
-  /* font-weight: bold; */
-  /* letter-spacing: 1em; */
-}
+  font-family: 'Chapeau-Medium';
 
-/* .cusButton{
-  
-} */
-
-
-.card-subtitle{
-  font-family: 'Fragment Mono';
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 .body-text{
-  font-family: 'Lato', sans-serif;
-  font-weight: 400;
-  font-size: calc(10px+.3vmin);
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-family: 'Chapeau-Medium';
 }
 
 
-.card{
-  position:relative;
-}
-
-.icon{
-  transition: transform .3s ease-in-out;
-}
-.icon:hover{
-  transform: rotate(45deg);
-  cursor: pointer;
-
-}
-
-.plus-icon{
-  position:absolute;
-  right: 15px;
-  bottom: 15px;
-  transition: transform .2s ease-in-out;
-}
-.plus-icon:hover{
-  transform: rotate(45deg);
-  cursor: pointer;
+.button{
+  font-family: 'Chapeau-Medium';
 }
 
 
-.vertical-line{
-  position:relative;
-  left:50px;
 
 
-}
-.border{
-  position:relative;
-}
-
-.right-box{
-  position:absolute;
-  right: -3px;
-  top:-3px;
-  width:4vw;
-  /* min-height: 200px ; */
-  background-color: #689581;
-}
-
-.bottom-box{
-  position:absolute;
-  bottom:-3px;
-  left:-3px;
-  height: 4vw;
-  background-color: #ACBC8A;
-  
-}
 
 .vertical-line{
   margin-top: 2vh;
@@ -126,21 +87,5 @@
   border-left:#000000 2px solid;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
-}
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f100; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgba(136, 136, 136, 0.0); 
-}
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
