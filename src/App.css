@@ -60,6 +60,8 @@
 
 .header-2{
   font-family: 'Chapeau-Black';
+  letter-spacing: '1px';
+  
 }
 
 
@@ -69,7 +71,7 @@
 }
 
 .body-text{
-  font-family: 'Chapeau-Medium';
+  font-family: 'SuisseNeue-Regular';
 }
 
 
