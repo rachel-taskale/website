@@ -254,13 +254,19 @@ function App() {
                 </Text>
                 <Text className="body-text" mt="10px">
                   I work as a Software Engineer at Broadridge Financial
-                  Solutions. In my free time, I love all things art and design.
-                  You can find my inspirations here and some funny UIs I've
-                  designed here.
-                  <Spacer h="10px"></Spacer>
+                  Solutions.
+
                   When I'm not at my computer, I'm usually drawing, hanging out
                   with friends in the city, or planning my next trip.
                   <Spacer h="10px"></Spacer>
+                  <VStack>
+                  <Button>
+                    Instagram
+                  </Button>
+                  <Button>
+
+                  </Button>
+                  </VStack>
                   Hope you enjoyed my portfolio :)
                 </Text>
               </Box>
