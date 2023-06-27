@@ -38,8 +38,8 @@ import {
 const CustomCard = (props) => {
   return (
     <Card
-      maxW={["xl", "lg"]}
-      minH={["xl", "lg"]}
+    w={{sm:"full", lg:"lg"}}
+    minH={["xl", "lg"]}
       variant="outline"
       // border="2px solid black"
       // bgColor='#80808020'
@@ -59,12 +59,12 @@ const CustomCard = (props) => {
         />
         <Stack spacing="3">
           <Heading>
-            <Text className="header" fontWeight="extrabold" fontSize="2xl">
+            <Text className="header" fontWeight="extrabold" fontSize={{sm:'4xl', lg:"2xl"}}>
               {props.title}
             </Text>
             <Text className="subtitle" 
             // color="#03D182" 
-            fontSize="sm">
+            fontSize={{sm:'2xl',lg:"sm"}}>
               {props.subtitle}
             </Text>
           </Heading>
@@ -86,6 +86,7 @@ const CustomCard = (props) => {
               bgColor="#03D18290"
               color="black"
               _hover={{ bgColor: "#03D182" }}
+              fontSize={{ sm: "3xl", xl: "md" }}
             >
               {props.buttonName}
             </Link>
@@ -207,6 +208,7 @@ function App() {
         <Wrap spacingX="20px" spacingY="70px" display="flex" justify="center" py='20px'>
           {projects.map((item) => (
             <CustomCard
+             
               title={item.title}
               subtitle={item.subtitle}
               img={item.img}
@@ -260,8 +262,8 @@ function App() {
                   Hope you enjoyed my portfolio :)
                 </Text>
                 <HStack mt='20px' spacingX="20px">
-                  <Button border="2px solid black">Instagram</Button>
-                  <Button border="2px solid black">LinkedIn</Button>
+                  <Link className='subtitle' border="2px solid black">Instagram</Link>
+                  <Link className='subtitle' border="2px solid black">LinkedIn</Link>
 
                 </HStack>
               </Box>
