@@ -61,12 +61,13 @@
 .header-2{
   font-family: 'Chapeau-Black';
   letter-spacing: '1px';
-  
+
 }
 
 
 .subtitle{
   font-family: 'Chapeau-Medium';
+  letter-spacing: '1px';
 
 }
 
@@ -77,6 +78,7 @@
 
 .button{
   font-family: 'Chapeau-Medium';
+  /* letter-spacing: '1px'; */
 }
 
 

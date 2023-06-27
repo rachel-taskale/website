@@ -41,13 +41,18 @@ const CustomCard = (props) => {
       maxW={["xl", "lg"]}
       minH={["xl", "lg"]}
       variant="outline"
-      border="2px solid black"
+      // border="2px solid black"
+      // bgColor='#80808020'
+      boxShadow='md'
+      
+      border='white'
       borderRadius="xl"
     >
       <CardBody>
         <Image
           width="500px"
           height="344px"
+          objectFit="cover"
           alt={props.title}
           src={props.img}
           borderRadius="lg"
@@ -57,7 +62,9 @@ const CustomCard = (props) => {
             <Text className="header" fontWeight="extrabold" fontSize="2xl">
               {props.title}
             </Text>
-            <Text className="subtitle" color="#A259FF" fontSize="sm">
+            <Text className="subtitle" 
+            // color="#03D182" 
+            fontSize="sm">
               {props.subtitle}
             </Text>
           </Heading>
@@ -68,17 +75,20 @@ const CustomCard = (props) => {
         <HStack width="full">
           <Spacer />
           <Link href={props.github} target="_blank">
-            <Button
+            <Link
               className="subtitle"
               variant="outline"
               right={0}
+              py='1'
+              px='2'
+              borderRadius={5}
               border="2px solid black"
               bgColor="#03D18290"
               color="black"
               _hover={{ bgColor: "#03D182" }}
             >
               {props.buttonName}
-            </Button>
+            </Link>
           </Link>
         </HStack>
       </CardFooter>
@@ -159,52 +169,42 @@ function App() {
 
   return (
     <Box className="App">
-      <Button
-        className="subtitle"
+      <Link
+        className="button"
         position="absolute"
         right="10"
         top="10"
         width="fit-content"
         px="2"
-        border="2px solid black"
-        bgColor="#03D18290"
-        _hover={{ bgColor: "#03D182" }}
-        fontSize={{ 'sm':"lg", 'xl': "sm"}}
+        py='1'
+        border="2px solid white"
+        borderRadius={5}
+        bgColor="#ffffff"
+        _hover={{ border:'2px solid black' }}
+        ffontSize={{ sm: "2xl", xl: "md" }}
       >
         View Resume
-      </Button>
-      <Box mx="7.5%" pt="30%" my={{'sm':'45%', 'lg':"7.5%"}}>
+      </Link>
+      <Box mx="7.5%" pt="30%" my={{ sm: "45%", lg: "7.5%" }}>
         <Box textAlign="left">
           <Text
-            fontSize={{ sm: "4xl", xl: "2xl" }}
+            fontSize={{ sm: "5xl", xl: "3xl" }}
             className="header"
             py="1"
             fontWeight="extrabold"
           >
-            <Highlight
-              query="Rachel Taskale"
-              styles={{
-                px: "1",
-                py: ".5",
-                bg: "orange.200",
-                color: "black",
-                borderRadius: "md",
-                border: "2px solid black",
-              }}
-            >
-              Rachel Taskale, developer + designer based out of New York.
-            </Highlight>
+          
+             <LinkOverlay href='#about'> Rachel Taskale </LinkOverlay>, developer + designer based out of New York.
           </Text>
-          <Text className="subtitle">
+          <Text className="subtitle"
+           fontSize={{ sm: "2xl", xl: "md" }}
+          >
             I build accessible, inclusive products and experiences for the web
           </Text>
         </Box>
         <Spacer minHeight="200px" />
-        {/* <HStack mb="100px">
-          <Text className="header-2"> Work</Text>
-          <Divider orientation="horizontal" colorScheme="#000000" wei />
-        </HStack> */}
-        <Wrap spacingX="20px" spacingY="70px" display="flex" justify="center">
+        
+        <Wrap spacingX="20px" spacingY="70px" display="flex" justify="center" py='20px'>
           {projects.map((item) => (
             <CustomCard
               title={item.title}
@@ -216,9 +216,9 @@ function App() {
               buttonName={item.buttonName}
             />
           ))}
-        </Wrap >
+        </Wrap>
         <Box>
-          <Divider width="full" />
+          
           <Spacer h="200px" />
           <Wrap
             justify="center"
@@ -232,8 +232,7 @@ function App() {
               textAlign="left"
               display="flex"
             >
-              <Avatar size='fit-content' />
-              
+              <Avatar size="fit-content" />
             </Box>
             <VStack
               display="flex"
@@ -254,21 +253,17 @@ function App() {
                 </Text>
                 <Text className="body-text" mt="10px">
                   I work as a Software Engineer at Broadridge Financial
-                  Solutions.
-
-                  When I'm not at my computer, I'm usually drawing, hanging out
-                  with friends in the city, or planning my next trip.
+                  Solutions. When I'm not at my computer, I'm usually drawing,
+                  hanging out with friends in the city, or planning my next
+                  trip.
                   <Spacer h="10px"></Spacer>
-                  <VStack>
-                  <Button>
-                    Instagram
-                  </Button>
-                  <Button>
-
-                  </Button>
-                  </VStack>
                   Hope you enjoyed my portfolio :)
                 </Text>
+                <HStack mt='20px' spacingX="20px">
+                  <Button border="2px solid black">Instagram</Button>
+                  <Button border="2px solid black">LinkedIn</Button>
+
+                </HStack>
               </Box>
             </VStack>
           </Wrap>
