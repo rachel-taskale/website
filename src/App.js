@@ -181,7 +181,7 @@ function App() {
         borderRadius={5}
         bgColor="#ffffff"
         _hover={{ border:'2px solid black' }}
-        ffontSize={{ sm: "2xl", xl: "md" }}
+        fontSize={{ sm: "3xl", xl: "md" }}
       >
         View Resume
       </Link>
@@ -197,7 +197,7 @@ function App() {
              <LinkOverlay href='#about'> Rachel Taskale </LinkOverlay>, developer + designer based out of New York.
           </Text>
           <Text className="subtitle"
-           fontSize={{ sm: "2xl", xl: "md" }}
+           fontSize={{ sm: "3xl", xl: "md" }}
           >
             I build accessible, inclusive products and experiences for the web
           </Text>
