@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-
+import { AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import React from "react";
 import {
   Box,
@@ -215,7 +215,7 @@ function App() {
             fontWeight="extrabold"
           >
           
-             <LinkOverlay href='#about'> Rachel Taskale </LinkOverlay>, developer + designer based out of New York.
+             <Link href='#about'> Rachel Taskale </Link>, developer + designer based out of New York.
           </Text>
           <Text className="subtitle"
            fontSize={{ sm: "3xl", lg:'xl',xl: "md" }}
@@ -284,7 +284,7 @@ function App() {
                   Hope you enjoyed my portfolio :)
                 </Text>
                 <HStack mt='20px' spacingX="20px">
-                <Link
+                <HStack
                     className="subtitle"
                     variant="outline"
                     href="https://www.instagram.com/art_by_task" 
@@ -298,9 +298,10 @@ function App() {
                     _hover={{ bgColor: "#03D182" }}
                     fontSize={{ sm: "3xl", xl: "md" }}
                   >
-                    Instagram
-                  </Link>
-                  <Link
+                    <AiFillInstagram/>
+                    <Text>Instagram</Text>
+                  </HStack>
+                  <HStack
                     className="subtitle"
                     variant="outline"
                     href="https://www.instagram.com/art_by_task" 
@@ -314,8 +315,9 @@ function App() {
                     _hover={{ bgColor: "#03D182" }}
                     fontSize={{ sm: "3xl", xl: "md" }}
                   >
-                    LinkedIn
-                  </Link>
+                    <AiFillLinkedin/>
+                    <Text>LinkedIn</Text>
+                  </HStack>
 
                  
 
