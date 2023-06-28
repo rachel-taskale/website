@@ -35,6 +35,25 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 
+// const CustomButton = (props) =>{
+//   return(
+//     <Link 
+//       href={props.url}
+//       className="button"
+//       px="2"
+//       py='1'
+//       border="2px solid white"
+//       borderRadius={5}
+   
+//       _hover={{ border:'2px solid black' }}
+//       fontSize={{ sm: "3xl", xl: "md" }}
+    
+//     >
+//     {props.title}
+//     </Link>
+//   )
+// }
+
 const CustomCard = (props) => {
   return (
     <Card
@@ -72,10 +91,13 @@ const CustomCard = (props) => {
       <CardFooter>
         <HStack width="full">
           <Spacer />
+       
+         
             <Link
               className="subtitle"
               variant="outline"
               href={props.github} target="_blank"
+             
               right={0}
               py='1'
               px='2'
@@ -233,7 +255,7 @@ function App() {
               textAlign="left"
               display="flex"
             >
-              {/* https://drive.google.com/file/d/1WcJD2DoD9VgDgXg4_BEWHvBCNp28BOt1/view?usp=sharing */}
+  
               <Avatar src='https://drive.google.com/uc?id=1WcJD2DoD9VgDgXg4_BEWHvBCNp28BOt1' width='300px' size="cover" />
             </Box>
             <VStack
@@ -263,36 +285,39 @@ function App() {
                 </Text>
                 <HStack mt='20px' spacingX="20px">
                 <Link
-              className="subtitle"
-              variant="outline"
-              href="https://www.instagram.com/art_by_task" target="_blank"
-              py='1'
-              px='2'
-              borderRadius={5}
-              border="2px solid black"
-              bgColor="#03D18290"
-              color="black"
-              _hover={{ bgColor: "#03D182" }}
-              fontSize={{ sm: "3xl", xl: "md" }}
-            >
-              Instagram
-            </Link>
-            <Link
-              className="subtitle"
-              variant="outline"
-              href="https://www.linkedin.com/in/racheltaskale" target="_blank"
-              py='1'
-              px='2'
-              borderRadius={5}
-              border="2px solid black"
-              bgColor="#03D18290"
-              color="black"
-              _hover={{ bgColor: "#03D182" }}
-              fontSize={{ sm: "3xl" ,xl: "md" }}
-            >
-              LinkedIn
-            </Link>
-                  
+                    className="subtitle"
+                    variant="outline"
+                    href="https://www.instagram.com/art_by_task" 
+                    target="_blank"
+                    py='1'
+                    px='2'
+                    borderRadius={5}
+                    border="2px solid black"
+                    bgColor="#03D18290"
+                    color="black"
+                    _hover={{ bgColor: "#03D182" }}
+                    fontSize={{ sm: "3xl", xl: "md" }}
+                  >
+                    Instagram
+                  </Link>
+                  <Link
+                    className="subtitle"
+                    variant="outline"
+                    href="https://www.instagram.com/art_by_task" 
+                    target="_blank"
+                    py='1'
+                    px='2'
+                    borderRadius={5}
+                    border="2px solid black"
+                    bgColor="#03D18290"
+                    color="black"
+                    _hover={{ bgColor: "#03D182" }}
+                    fontSize={{ sm: "3xl", xl: "md" }}
+                  >
+                    LinkedIn
+                  </Link>
+
+                 
 
                 </HStack>
               </Box>
