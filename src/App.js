@@ -38,43 +38,40 @@ import {
 const CustomCard = (props) => {
   return (
     <Card
-    w={{sm:"full", lg:"lg"}}
-    minH={["xl", "lg"]}
+      w={{sm:"full", lg:"lg"}}
+      minH={["xl", "lg"]}
       variant="outline"
-      // border="2px solid black"
-      // bgColor='#80808020'
+      direction={{ sm: 'row', lg: 'column' }}
       boxShadow='md'
-      
       border='white'
       borderRadius="xl"
     >
-      <CardBody>
+      
         <Image
-          width="500px"
+          minWidth="500px"
           height="344px"
           objectFit="cover"
           alt={props.title}
           src={props.img}
           borderRadius="lg"
         />
-        <Stack spacing="3">
+
+    <Stack mt={{sm:'5%', lg:'0%'}}>
+      <CardBody>
           <Heading>
             <Text className="header" fontWeight="extrabold" fontSize={{sm:'4xl', lg:"2xl"}}>
               {props.title}
             </Text>
             <Text className="subtitle" 
-            // color="#03D182" 
             fontSize={{sm:'2xl',lg:"sm"}}>
               {props.subtitle}
             </Text>
           </Heading>
-        </Stack>
       </CardBody>
 
       <CardFooter>
         <HStack width="full">
           <Spacer />
-         
             <Link
               className="subtitle"
               variant="outline"
@@ -91,9 +88,9 @@ const CustomCard = (props) => {
             >
               {props.buttonName}
             </Link>
-          
         </HStack>
       </CardFooter>
+      </Stack>
     </Card>
   );
 };
@@ -183,14 +180,14 @@ function App() {
         borderRadius={5}
         bgColor="#ffffff"
         _hover={{ border:'2px solid black' }}
-        fontSize={{ sm: "3xl", xl: "md" }}
+        fontSize={{ sm: "3xl", lg:'xl' ,xl: "md" }}
       >
         View Resume
       </Link>
       <Box mx="7.5%" pt="30%" my={{ sm: "45%", lg: "7.5%" }}>
         <Box textAlign="left">
           <Text
-            fontSize={{ sm: "5xl", xl: "3xl" }}
+            fontSize={{ sm: "5xl", lg:'4xl' ,xl: "3xl" }}
             className="header"
             py="1"
             fontWeight="extrabold"
@@ -199,7 +196,7 @@ function App() {
              <LinkOverlay href='#about'> Rachel Taskale </LinkOverlay>, developer + designer based out of New York.
           </Text>
           <Text className="subtitle"
-           fontSize={{ sm: "3xl", xl: "md" }}
+           fontSize={{ sm: "3xl", lg:'xl',xl: "md" }}
           >
             I build accessible, inclusive products and experiences for the web
           </Text>
@@ -223,6 +220,7 @@ function App() {
         <Box>
           
           <Spacer h="200px" />
+          <Center>
           <Wrap
             justify="center"
             alignItems="left"
@@ -290,7 +288,7 @@ function App() {
               bgColor="#03D18290"
               color="black"
               _hover={{ bgColor: "#03D182" }}
-              fontSize={{ sm: "3xl", xl: "md" }}
+              fontSize={{ sm: "3xl" ,xl: "md" }}
             >
               LinkedIn
             </Link>
@@ -300,6 +298,7 @@ function App() {
               </Box>
             </VStack>
           </Wrap>
+          </Center>
         </Box>
       </Box>
     </Box>
