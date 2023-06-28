@@ -256,7 +256,7 @@ function App() {
               textAlign="left"
               display="flex"
             >
-              {/* https://drive.google.com/file/d/1WcJD2DoD9VgDgXg4_BEWHvBCNp28BOt1/view?usp=sharing */}
+  
               <Avatar src='https://drive.google.com/uc?id=1WcJD2DoD9VgDgXg4_BEWHvBCNp28BOt1' width='300px' size="cover" />
             </Box>
             <VStack
