@@ -267,11 +267,13 @@ function App() {
               // border="1px solid black"
             >
               <Box>
+                <Link href="#about"/>
                 <Text
                   className="header-2"
                   fontWeight="extrabold"
                   fontSize="lg"
                   mt="50px"
+                  href='#about'
                 >
                   About Me
                 </Text>
@@ -284,10 +286,10 @@ function App() {
                   Hope you enjoyed my portfolio :)
                 </Text>
                 <HStack mt='20px' spacingX="20px">
+                <Link href="https://www.instagram.com/art_by_task" >
                 <HStack
                     className="subtitle"
                     variant="outline"
-                    href="https://www.instagram.com/art_by_task" 
                     target="_blank"
                     py='1'
                     px='2'
@@ -301,10 +303,11 @@ function App() {
                     <AiFillInstagram/>
                     <Text>Instagram</Text>
                   </HStack>
+                  </Link>
+                  <Link  href="https://www.linkedin.com/in/racheltaskale" >
                   <HStack
                     className="subtitle"
                     variant="outline"
-                    href="https://www.instagram.com/art_by_task" 
                     target="_blank"
                     py='1'
                     px='2'
@@ -318,6 +321,7 @@ function App() {
                     <AiFillLinkedin/>
                     <Text>LinkedIn</Text>
                   </HStack>
+                  </Link>
 
                  
 
