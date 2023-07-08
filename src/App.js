@@ -1,7 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
-import React from "react";
+import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import Animation from "./Animation"
+import React, {useState} from "react";
 import {
   Box,
   HStack,
@@ -32,75 +33,141 @@ import {
   Textarea,
   Highlight,
   LinkOverlay,
+  NavLink,
+ 
   Avatar,
 } from "@chakra-ui/react";
 
-// const CustomButton = (props) =>{
-//   return(
-//     <Link 
-//       href={props.url}
-//       className="button"
-//       px="2"
-//       py='1'
-//       border="2px solid white"
-//       borderRadius={5}
-   
-//       _hover={{ border:'2px solid black' }}
-//       fontSize={{ sm: "3xl", xl: "md" }}
-    
-//     >
-//     {props.title}
-//     </Link>
-//   )
-// }
+
+
+
+// https://drive.google.com/uc?id=1jrVPTneEsbwMZ7RkXFD3NopjnpvpS_Di
+const DynamicImage = () => {
+  const image2 = 'url("https://drive.google.com/uc?id=1jrVPTneEsbwMZ7RkXFD3NopjnpvpS_Di")';
+  const image1 = 'url("https://drive.google.com/uc?id=1MjdyDNFhJ4-1baTTVS1vESsVoiPEb8co")';
+
+  const [image, setImage] = useState(image1);
+
+  return (
+    <Image
+      style={{ content: image }}
+      onMouseEnter={() => setImage(image2)}
+      onMouseOut={() => setImage(image1)}
+      width={200}
+    />
+  );
+}
+
+ const About = (props) => {
+  return (
+    <Box>
+      
+      <Text
+        className="header-2"
+        fontWeight="extrabold"
+        fontSize="lg"
+        mt="50px"
+        href="#about"
+      >
+        About Me
+      </Text>
+      <Text className="body-text" mt="10px">
+        I work as a Software Engineer at Broadridge Financial Solutions. When
+        I'm not at my computer, I'm usually drawing, hanging out with friends in
+        the city, or planning my next trip.
+        <Spacer h="10px"></Spacer>
+        Hope you enjoyed my portfolio :)
+      </Text>
+      <HStack mt="20px" spacingX="20px">
+        <Link href="https://www.instagram.com/art_by_task">
+          <HStack
+            className="subtitle"
+            variant="outline"
+            target="_blank"
+            py="1"
+            px="2"
+            borderRadius={5}
+            border="2px solid black"
+            bgColor="#03D18290"
+            color="black"
+            _hover={{ bgColor: "#03D182" }}
+            fontSize={{ sm: "3xl", xl: "md" }}
+          >
+            <AiFillInstagram />
+            <Text>Instagram</Text>
+          </HStack>
+        </Link>
+        <Link href="https://www.linkedin.com/in/racheltaskale">
+          <HStack
+            className="subtitle"
+            variant="outline"
+            target="_blank"
+            py="1"
+            px="2"
+            borderRadius={5}
+            border="2px solid black"
+            bgColor="#03D18290"
+            color="black"
+            _hover={{ bgColor: "#03D182" }}
+            fontSize={{ sm: "3xl", xl: "md" }}
+          >
+            <AiFillLinkedin />
+            <Text>LinkedIn</Text>
+          </HStack>
+        </Link>
+      </HStack>
+    </Box>
+  );
+};
 
 const CustomCard = (props) => {
   return (
     <Card
-      w={{sm:"full", lg:"lg"}}
+      w={{ sm: "full", lg: "lg" }}
       minH={["xl", "lg"]}
       variant="outline"
-      direction={{ sm: 'row', lg: 'column' }}
-      boxShadow='md'
-      border='white'
+      direction={{ sm: "row", lg: "column" }}
+      boxShadow="md"
+      border="white"
       borderRadius="xl"
     >
-      
-        <Image
-          minWidth="500px"
-          height="344px"
-          objectFit="cover"
-          alt={props.title}
-          src={props.img}
-          borderRadius="lg"
-        />
+      <Image
+        minWidth="500px"
+        height="344px"
+        objectFit="cover"
+        alt={props.title}
+        src={props.img}
+        borderRadius="lg"
+      />
 
-    <Stack mt={{sm:'5%', lg:'0%'}}>
-      <CardBody>
+      <Stack mt={{ sm: "5%", lg: "0%" }}>
+        <CardBody>
           <Heading>
-            <Text className="header" fontWeight="extrabold" fontSize={{sm:'4xl', lg:"2xl"}}>
+            <Text
+              className="header"
+              fontWeight="extrabold"
+              fontSize={{ sm: "4xl", lg: "2xl" }}
+            >
               {props.title}
             </Text>
-            <Text className="subtitle" 
-            fontSize={{sm:'2xl',lg:"sm"}}>
+            <Text className="subtitle" fontSize={{ sm: "2xl", lg: "sm" }}>
               {props.subtitle}
             </Text>
           </Heading>
-      </CardBody>
+        </CardBody>
 
-      <CardFooter>
-        <HStack width="full">
-          <Spacer />
-       
-         
+        <CardFooter>
+          <HStack width="full">
+            <Spacer />
+
             <Link
               className="subtitle"
               variant="outline"
-              href={props.github} target="_blank"
-             
+              href={props.github}
+              target="_blank"
               right={0}
-              py='1'
-              px='2'
+              py="1"
+              px="2"
               borderRadius={5}
               border="2px solid black"
               bgColor="#03D18290"
@@ -110,8 +177,8 @@ const CustomCard = (props) => {
             >
               {props.buttonName}
             </Link>
-        </HStack>
-      </CardFooter>
+          </HStack>
+        </CardFooter>
       </Stack>
     </Card>
   );
@@ -156,7 +223,6 @@ function App() {
     {
       title: "Kestrel",
       subtitle: "Design",
-      // https://drive.google.com/file/d/1qvSAU6rF6F5pau1QoAJoL8EUv_YA99fg/view?usp=sharing
       img: "https://drive.google.com/uc?id=1qvSAU6rF6F5pau1QoAJoL8EUv_YA99fg",
       description:
         "Rebranding logo design for an agricultural startup seeking to easy the process of loans for small farmers",
@@ -168,7 +234,6 @@ function App() {
     {
       title: "High on Self Esteem",
       subtitle: "Art",
-      // https://drive.google.com/file/d/1zZe-q6GmuoQbeDoklFxRijoo800XaDRW/view?usp=sharing
       img: "https://drive.google.com/uc?id=1zZe-q6GmuoQbeDoklFxRijoo800XaDRW",
       description: "",
       tech: "postgres + nodejs + react",
@@ -197,38 +262,50 @@ function App() {
         top="10"
         width="fit-content"
         px="2"
-        py='1'
+        py="1"
         border="2px solid white"
         borderRadius={5}
         bgColor="#ffffff"
-        _hover={{ border:'2px solid black' }}
-        fontSize={{ sm: "3xl", lg:'xl' ,xl: "md" }}
+        _hover={{ border: "2px solid black" }}
+        fontSize={{ sm: "3xl", lg: "xl", xl: "md" }}
       >
         View Resume
       </Link>
-      <Box mx="7.5%" pt="30%" my={{ sm: "45%", lg: "7.5%" }}>
+      <Box mx="7.5%" pt={{xs:'0%',lg:"5%"}} my={{ sm: "20%", lg: "7.5%" }}>
+        <Center>
+        {/* <Animation py='5%'/> */}
+        {/* https://drive.google.com/file/d/1jrVPTneEsbwMZ7RkXFD3NopjnpvpS_Di/view?usp=sharing */}
+        {/* <DynamicImage/> */}
+        <Image height={{md:'500px',lg:'400px'}} src='https://drive.google.com/uc?id=1jrVPTneEsbwMZ7RkXFD3NopjnpvpS_Di'/>
+        </Center>
         <Box textAlign="left">
           <Text
-            fontSize={{ sm: "5xl", lg:'4xl' ,xl: "3xl" }}
+            fontSize={{ sm: "5xl", lg: "4xl", xl: "3xl" }}
             className="header"
             py="1"
             fontWeight="extrabold"
           >
-          
-             <Link href='#about'> Rachel Taskale </Link>, developer + designer based out of New York.
+            <Link to="/about"> Rachel Taskale </Link>, developer + designer
+            based out of New York.
           </Text>
-          <Text className="subtitle"
-           fontSize={{ sm: "3xl", lg:'xl',xl: "md" }}
+          <Text
+            className="subtitle"
+            fontSize={{ sm: "3xl", lg: "xl", xl: "md" }}
           >
             I build accessible, inclusive products and experiences for the web
           </Text>
         </Box>
         <Spacer minHeight="200px" />
-        
-        <Wrap spacingX="20px" spacingY="70px" display="flex" justify="center" py='20px'>
+
+        <Wrap
+          spacingX="20px"
+          spacingY="70px"
+          display="flex"
+          justify="center"
+          py="20px"
+        >
           {projects.map((item) => (
             <CustomCard
-             
               title={item.title}
               subtitle={item.subtitle}
               img={item.img}
@@ -240,95 +317,40 @@ function App() {
           ))}
         </Wrap>
         <Box>
-          
           <Spacer h="200px" />
           <Center>
-          <Wrap
-            justify="center"
-            alignItems="left"
-            textAlign="left"
-            spacing="20px"
-          >
-            <Box
-              minW={["xl", "lg"]}
-              h="fit-content"
+            <Wrap
+              justify="center"
+              alignItems="left"
               textAlign="left"
-              display="flex"
+              spacing="20px"
             >
-  
-              <Avatar src='https://drive.google.com/uc?id=1WcJD2DoD9VgDgXg4_BEWHvBCNp28BOt1' width='300px' size="cover" />
-            </Box>
-            <VStack
-              display="flex"
-              alightContent="left"
-              maxW={["xl", "lg"]}
-              h="fit-content"
-              width="full"
-              // border="1px solid black"
-            >
-              <Box>
-                <Link href="#about"/>
-                <Text
-                  className="header-2"
-                  fontWeight="extrabold"
-                  fontSize="lg"
-                  mt="50px"
-                  href='#about'
-                >
-                  About Me
-                </Text>
-                <Text className="body-text" mt="10px">
-                  I work as a Software Engineer at Broadridge Financial
-                  Solutions. When I'm not at my computer, I'm usually drawing,
-                  hanging out with friends in the city, or planning my next
-                  trip.
-                  <Spacer h="10px"></Spacer>
-                  Hope you enjoyed my portfolio :)
-                </Text>
-                <HStack mt='20px' spacingX="20px">
-                <Link href="https://www.instagram.com/art_by_task" >
-                <HStack
-                    className="subtitle"
-                    variant="outline"
-                    target="_blank"
-                    py='1'
-                    px='2'
-                    borderRadius={5}
-                    border="2px solid black"
-                    bgColor="#03D18290"
-                    color="black"
-                    _hover={{ bgColor: "#03D182" }}
-                    fontSize={{ sm: "3xl", xl: "md" }}
-                  >
-                    <AiFillInstagram/>
-                    <Text>Instagram</Text>
-                  </HStack>
-                  </Link>
-                  <Link  href="https://www.linkedin.com/in/racheltaskale" >
-                  <HStack
-                    className="subtitle"
-                    variant="outline"
-                    target="_blank"
-                    py='1'
-                    px='2'
-                    borderRadius={5}
-                    border="2px solid black"
-                    bgColor="#03D18290"
-                    color="black"
-                    _hover={{ bgColor: "#03D182" }}
-                    fontSize={{ sm: "3xl", xl: "md" }}
-                  >
-                    <AiFillLinkedin/>
-                    <Text>LinkedIn</Text>
-                  </HStack>
-                  </Link>
-
-                 
-
-                </HStack>
+              <Box
+                minW={["xl", "lg"]}
+                h="fit-content"
+                textAlign="left"
+                display="flex"
+              >
+                <Avatar
+                  src="https://drive.google.com/uc?id=1WcJD2DoD9VgDgXg4_BEWHvBCNp28BOt1"
+                  width="300px"
+                  size="cover"
+                />
               </Box>
-            </VStack>
-          </Wrap>
+              <VStack
+                display="flex"
+                alignContent="left"
+                maxW={["xl", "lg"]}
+                h="fit-content"
+                width="full"
+                // border="1px solid black"
+              >
+                <Box >
+                  <Link href="/about" />
+                  <About/>
+                </Box>
+              </VStack>
+            </Wrap>
           </Center>
         </Box>
       </Box>

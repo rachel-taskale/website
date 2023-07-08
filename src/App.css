@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Roboto+Slab:wght@200;300;400;500;700;900&display=swap');
 
 
@@ -6,90 +5,70 @@
   text-align: center;
 }
 
-
 /* Font Loading */
 @font-face {
   font-family: "Chapeau-Black";
   src: url("./fonts/ChapeauWEB-Black.woff") format("woff");
-  }
+}
 
 @font-face {
   font-family: "Chapeau-Medium";
   src: url("./fonts/ChapeauWEB-Medium.woff") format("woff");
-  }
+}
 
 
 @font-face {
   font-family: "SuisseNeue-Regular";
   src: url("./fonts/SuisseNeue-Regular.woff") format("woff"),
-  url("./fonts/SuisseNeue-Regular.woff2") format("woff2");
-  }
+    url("./fonts/SuisseNeue-Regular.woff2") format("woff2");
+}
 
-  @font-face {
-    font-family: "Ogg";
-    src: url("./fonts/Ogg-Regular.woff") format("woff"),
+@font-face {
+  font-family: "Ogg";
+  src: url("./fonts/Ogg-Regular.woff") format("woff"),
     url("./fonts/Ogg-Regular.woff2") format("woff2");
-    }
-  
-/* Focus */
+}
+
 *:focus {
   outline: var(--projcolor) auto 3px;
 }
- 
+
 
 
 
 .App {
-  /* background-color: #fefbf2; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* font-size: calc(10px + 1.5vmin); */
   color: black;
-  
   text-align: left;
 }
 
-.header{
-  font-family: 'Ogg';  
+.header {
+  font-family: 'Ogg';
 
 
 }
 
-.header-2{
+.header-2 {
   font-family: 'Chapeau-Black';
   letter-spacing: '1px';
 
 }
 
 
-.subtitle{
+.subtitle {
   font-family: 'Chapeau-Medium';
   letter-spacing: '1px';
 
 }
 
-.body-text{
+.body-text {
   font-family: 'SuisseNeue-Regular';
 }
 
 
-.button{
+.button {
   font-family: 'Chapeau-Medium';
   /* letter-spacing: '1px'; */
 }
-
-
-
-
-
-.vertical-line{
-  margin-top: 2vh;
-  height: 100px;
-  border-left:#000000 2px solid;
-}
-
-
-
