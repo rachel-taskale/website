@@ -1,361 +1,266 @@
-import logo from "./logo.svg";
-import "./App.css";
-import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
-import Animation from "./Animation"
-import React, {useState} from "react";
-import {
-  Box,
-  HStack,
-  VStack,
-  Text,
-  SimpleGrid,
-  Grid,
-  Flex,
-  Icon,
-  Divider,
-  Wrap,
-  WrapItem,
-  Spacer,
-  Button,
-  ButtonGroup,
-  Link,
-  Center,
-  Stack,
-  Image,
-  Input,
-  IconButton,
-  Card,
-  CardHeader,
-  CardBody,
-  CardBodyProps,
-  CardFooter,
-  Heading,
-  Textarea,
-  Highlight,
-  LinkOverlay,
-  NavLink,
- 
-  Avatar,
-} from "@chakra-ui/react";
-
-
-
-
-// https://drive.google.com/uc?id=1jrVPTneEsbwMZ7RkXFD3NopjnpvpS_Di
-const DynamicImage = () => {
-  const image2 = 'url("https://drive.google.com/uc?id=1jrVPTneEsbwMZ7RkXFD3NopjnpvpS_Di")';
-  const image1 = 'url("https://drive.google.com/uc?id=1MjdyDNFhJ4-1baTTVS1vESsVoiPEb8co")';
-
-  const [image, setImage] = useState(image1);
-
+import * as React from "react";
+import { useState } from "react";
+import "./input.css";
+import { FaInstagram, FaRegEnvelope, FaGithub, FaLinkedinIn, FaAngleLeft, FaAdversal, FaAngleRight, FaInfo } from "react-icons/fa";
+const AboutMe = () => {
   return (
-    <Image
-      style={{ content: image }}
-      onMouseEnter={() => setImage(image2)}
-      onMouseOut={() => setImage(image1)}
-      width={200}
-    />
+    <div className="w-full">
+      <div className="w-full subtitle text-md font-bold">About Me</div>
+      <hr class=" h-0.5 mb-8 border-t-0 bg-subtitle-blue opacity-100 dark:opacity-50" />
+      <div className="grid grid-cols-2 items-center">
+        {/* <div className="absolute rounded-full ml-5 w-80 h-72 border-8 border-red-highlight"/> */}
+        <img
+          className="image w-80 h-60 rounded-lg object-cover"
+          src="https://drive.google.com/uc?id=1WcJD2DoD9VgDgXg4_BEWHvBCNp28BOt1"
+        />
+
+        <div className="grid grid-rows-2">
+          <div className="header font-bold text-red-highlight text-xl opacity-100">
+            Hi, my name is Rachel!
+          </div>
+          <div className="body-text text-sm h-fit  content-center opacity-60">
+            I work as a Software Engineer at Broadridge Financial Solutions. In
+            my free time, I enjoy drawing with my set of prismacolor colored
+            pencils, exploring NYC, and hanging out with friends.
+          </div>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
- const About = (props) => {
+const SoftwareProjects = () => {
   return (
-    <Box>
+    <div className="my-10 w-full">
+      <div className=" subtitle text-md gap-20 font-bold">
+        <div>Software Projects</div>
+        {/* <div>Tags</div> */}
+      </div>
+      <hr class=" h-0.5  mb-8 border-t-0 bg-subtitle-blue opacity-100 dark:opacity-50" />
+      {/* <div className="grid "> */}
+      <div className="grid grid-cols-2 my-1 px-2 rounded-md gap-x-96 items-center pb-6">
+        <a className="header text-green-highlight text-xl " href="#" target="_blank">
+          Big Data Processing
+        </a>
+        <div className="grid grid-rows-3 body-text gap-y-1  text-sm h-fit opacity-60">
+          <div>AWS</div>
+          <div>Java</div>
+          <div>Python</div>
+        </div>
+      </div>
+
+      <hr class=" h-0.5 border-t-0 bg-subtitle-blue opacity-100 dark:opacity-50 " />
+      <div className="grid grid-cols-2 my-1 px-2 rounded-md gap-x-96 items-center py-6">
+        <a className="header text-green-highlight text-xl" href="#" target="_blank">
+          Women Investors
+        </a>
+        <div className="grid grid-rows-3 body-text gap-y-1 text-sm opacity-60">
+          <div>Product Design</div>
+          <div>Figma</div>
+          <div>Business</div>
+        </div>
+      </div>
+      <hr class=" h-0.5 border-t-0 bg-subtitle-blue opacity-100 dark:opacity-50" />
+      <div className="grid grid-cols-2 my-1 px-2 rounded-md gap-x-96 items-center py-6">
+        <a className="header text-green-highlight text-xl" href="https://github.com/rachel-taskale/TreeClassifier" target="_blank">
+          Tree Identification
+        </a>
+        <div className="grid grid-rows-2 body-text text-sm gap-y-1 opacity-60">
+          <div>PyTorch</div>
+          <div>Deep Learning</div>
+        </div>
+      </div>
+
+      <hr class=" h-0.5 border-t-0 bg-subtitle-blue opacity-100 dark:opacity-50" />
+      <div className="grid grid-cols-2  rounded-md px-2 gap-x-96 items-center py-6">
+        <a className="header text-green-highlight text-xl" href="https://github.com/rachel-taskale/Reddit_to_Tiktok_Bot" target="_blank">
+          Reddit to TikTok
+        </a>
+        <div className="grid grid-rows-3 body-text text-sm gap-y-1 opacity-60">
+          <div>MoviePy</div>
+          <div>Automation</div>
+          <div>Python</div>
+        </div>
+      </div>
+      {/* </div> */}
+    </div>
+  );
+};
+
+const ArtProjects = () => {
+  return (
+    <div className="my-10 w-full ">
+      <div className=" subtitle grid text-md font-bold gap-x-80">
+        <div>Design</div>
+      </div>
+      <hr class=" h-0.5 mb-8 border-t-0 bg-subtitle-blue opacity-100 dark:opacity-50" />
+        <div className="grid grid-cols-3 gap-x-4 body-text text-md px-2 ">
+          <div>
+            <div className="text-orange-highlight header text-xl font-bold  ">
+              Logos
+            </div>
+            <ul className="text-sm leading-loose opacity-60	">
+              <li>
+                <a
+                  href="https://github.com/rachel-taskale/GraphicDesignWork/blob/main/logos/Kestrel%20Final.svg"
+                  target="_blank"
+                >
+                  Kestrel
+                </a>
+              </li>
+              <li>
+                {" "}
+                <a href="https://farama.org/projects" target="_blank">
+                  Metaworld{" "}
+                </a>
+              </li>
+              <li>
+                {" "}
+                <a href="https://farama.org/projects" target="_blank">
+                  MO-Gymnasium{" "}
+                </a>
+              </li>
+              <li>
+                {" "}
+                <a href="https://farama.org/projects" target="_blank">
+                  Umshini{" "}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div className="text-orange-highlight header text-xl font-bold ">
+              Art
+            </div>
+            <div className="text-sm leading-loose opacity-60	">
+              <ul>
+                <li>
+                  {" "}
+                  <a
+                    href="https://github.com/rachel-taskale/GraphicDesignWork/blob/main/art/Vicious%20Summer%20faces.png"
+                    target="_blank"
+                  >
+                    High on Self-Esteem{" "}
+                  </a>
+                </li>
+                <li>
+                  {" "}
+                  <a
+                    href="https://github.com/rachel-taskale/GraphicDesignWork/blob/main/art/Vicious%20Summer%20skull.png"
+                    target="_blank"
+                  >
+                    Broken Record Love
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div className="text-orange-highlight text-xl header font-bold">
+              UI
+            </div>
+            <ul className="text-sm leading-loose opacity-60	">
+              <li>
+                {" "}
+                <a
+                  href="https://www.linkedin.com/posts/racheltaskale_hypemusiconly-mentalhealthawareness-partnership-activity-7069488582373048320-TLvC?utm_source=share&utm_medium=member_desktop"
+                  target="_blank"
+                >
+                  Spotify X BetterHelp
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/posts/racheltaskale_nextbigthing-venmo-startup-activity-7069787130260070400-QanP?utm_source=share&utm_medium=member_desktop"
+                  target="_blank"
+                >
+                  Venmo Payback Rate{" "}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/posts/racheltaskale_10xgrowth-impact-startup-activity-7063561214085279744-x_m6?utm_source=share&utm_medium=member_desktop"
+                  target="_blank"
+                >
+                  GenZ Meeting Stimulator
+                </a>
+              </li>
+            </ul>
+          </div>
       
-      <Text
-        className="header-2"
-        fontWeight="extrabold"
-        fontSize="lg"
-        mt="50px"
-        href="#about"
-      >
-        About Me
-      </Text>
-      <Text className="body-text" mt="10px">
-        I work as a Software Engineer at Broadridge Financial Solutions. When
-        I'm not at my computer, I'm usually drawing, hanging out with friends in
-        the city, or planning my next trip.
-        <Spacer h="10px"></Spacer>
-        Hope you enjoyed my portfolio :)
-      </Text>
-      <HStack mt="20px" spacingX="20px">
-        <Link href="https://www.instagram.com/art_by_task">
-          <HStack
-            className="subtitle"
-            variant="outline"
-            target="_blank"
-            py="1"
-            px="2"
-            borderRadius={5}
-            border="2px solid black"
-            bgColor="#03D18290"
-            color="black"
-            _hover={{ bgColor: "#03D182" }}
-            fontSize={{ sm: "3xl", xl: "md" }}
-          >
-            <AiFillInstagram />
-            <Text>Instagram</Text>
-          </HStack>
-        </Link>
-        <Link href="https://www.linkedin.com/in/racheltaskale">
-          <HStack
-            className="subtitle"
-            variant="outline"
-            target="_blank"
-            py="1"
-            px="2"
-            borderRadius={5}
-            border="2px solid black"
-            bgColor="#03D18290"
-            color="black"
-            _hover={{ bgColor: "#03D182" }}
-            fontSize={{ sm: "3xl", xl: "md" }}
-          >
-            <AiFillLinkedin />
-            <Text>LinkedIn</Text>
-          </HStack>
-        </Link>
-      </HStack>
-    </Box>
+       
+      </div>
+    </div>
   );
 };
 
-const CustomCard = (props) => {
+const Contact = () => {
   return (
-    <Card
-      w={{ sm: "full", lg: "lg" }}
-      minH={["xl", "lg"]}
-      variant="outline"
-      direction={{ sm: "row", lg: "column" }}
-      boxShadow="md"
-      border="white"
-      borderRadius="xl"
-    >
-      <Image
-        minWidth="500px"
-        height="344px"
-        objectFit="cover"
-        alt={props.title}
-        src={props.img}
-        borderRadius="lg"
-      />
+       <div className="grid grid-cols-4 w-fit gap-x-5 text-right">
+          <a href="mailto:racheltaskale@gmail.com"  _target='blank' ><FaRegEnvelope  className='text-blue-highlight'size='1.5rem'/></a>
+          <a href="https://github.com/rachel-taskale/"><FaLinkedinIn  className='text-blue-highlight'size='1.5rem'/></a>
+          <a href="https://instagram.com/art_by_task" _target='blank'><FaInstagram  className='text-blue-highlight'size='1.5rem'/></a>
+          <a href="https://github.com/rachel-taskale/" _target='blank'><FaGithub  className='text-blue-highlight'size='1.5rem'/></a>
 
-      <Stack mt={{ sm: "5%", lg: "0%" }}>
-        <CardBody>
-          <Heading>
-            <Text
-              className="header"
-              fontWeight="extrabold"
-              fontSize={{ sm: "4xl", lg: "2xl" }}
-            >
-              {props.title}
-            </Text>
-            <Text className="subtitle" fontSize={{ sm: "2xl", lg: "sm" }}>
-              {props.subtitle}
-            </Text>
-          </Heading>
-        </CardBody>
+          </div>   
+      
 
-        <CardFooter>
-          <HStack width="full">
-            <Spacer />
-
-            <Link
-              className="subtitle"
-              variant="outline"
-              href={props.github}
-              target="_blank"
-              right={0}
-              py="1"
-              px="2"
-              borderRadius={5}
-              border="2px solid black"
-              bgColor="#03D18290"
-              color="black"
-              _hover={{ bgColor: "#03D182" }}
-              fontSize={{ sm: "3xl", xl: "md" }}
-            >
-              {props.buttonName}
-            </Link>
-          </HStack>
-        </CardFooter>
-      </Stack>
-    </Card>
+      
   );
 };
 
-function App() {
-  const projects = [
-    {
-      title: "Women Investors Project",
-      subtitle: "Product Development",
-      //https://drive.google.com/file/d/185x1ykc6KPolb-tKm5L6nVYi-E2fI67f/view?usp=sharing
-      img: "https://drive.google.com/uc?id=185x1ykc6KPolb-tKm5L6nVYi-E2fI67f",
-      description:
-        "Research and development of features centered around making the world of finance more equitable for women investors",
-      tech: "postgres + nodejs + react",
-      github:
-        "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/logos/metaworld-1000x1000.svg",
-      buttonName: "Read Case Study",
-    },
-    {
-      title: "Metaworld",
-      subtitle: "Design",
-      // https://drive.google.com/file/d/1s2LDGXSoHpx0z8SsouJvbQiolJ9jCvNj/view?usp=sharing
-      img: "https://drive.google.com/uc?id=1s2LDGXSoHpx0z8SsouJvbQiolJ9jCvNj",
-      description: "Logo designed for Farama Foundation.",
-      tech: "postgres + nodejs + react",
-      github:
-        "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/logos/metaworld-1000x1000.svg",
-      buttonName: "Read Case Study",
-    },
-    {
-      title: "Staffing Dashboard",
-      subtitle: "UI + Dev",
-      // https://drive.google.com/file/d/190XaY8JkGCcUQFSVE40Pkty_JKW0ZUiX/view?usp=sharing
-      img: "https://drive.google.com/uc?id=190XaY8JkGCcUQFSVE40Pkty_JKW0ZUiX",
-      description:
-        "Dashboard developed to allow the user to manage clients & staff to fulfill private events",
-      tech: "postgres + nodejs + react",
-      github: "https://github.com/rachel-taskale/staffing",
-      buttonName: "Read Case Study",
-    },
-    {
-      title: "Kestrel",
-      subtitle: "Design",
-      img: "https://drive.google.com/uc?id=1qvSAU6rF6F5pau1QoAJoL8EUv_YA99fg",
-      description:
-        "Rebranding logo design for an agricultural startup seeking to easy the process of loans for small farmers",
-      tech: "postgres + nodejs + react",
-      github:
-        "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/logos/Kestrel%20Final.svg",
-      buttonName: "Read Case Study",
-    },
-    {
-      title: "High on Self Esteem",
-      subtitle: "Art",
-      img: "https://drive.google.com/uc?id=1zZe-q6GmuoQbeDoklFxRijoo800XaDRW",
-      description: "",
-      tech: "postgres + nodejs + react",
-      github:
-        "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/art/Vicious%20Summer%20faces.png",
-      buttonName: "View Drawing",
-    },
-    {
-      title: "Broken Record Love",
-      subtitle: "Art",
-      img: "https://drive.google.com/uc?id=1mq55T5MfOGa_-AboDu2YEunn49-k39M5",
-      description: "",
-      tech: "postgres + nodejs + react",
-      github:
-        "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/art/Vicious%20Summer%20skull.png",
-      buttonName: "View Drawing",
-    },
-  ];
+const LandingImage = () => {
+  return (
+    <div class="grid grid-rows-2 grid-cols-6 grid-flow-col gap-4 pb-20 pt-28">
+      <div class="col-span-1 row-span-2 bg-red-highlight h-72 rounded-lg" />
+      <div class=" col-span-5 row-span-1 grid grid-cols-2  gap-4">
+        <div class="col-span-2.5 bg-orange-highlight rounded-lg" />
+        <div class="col-span-2.5 bg-blue-highlight rounded-lg" />
+      </div>
+      <div class="row-span-1 col-span-5 bg-green-highlight rounded-lg" />
+    </div>
+  );
+};
+
+export default function App() {
+  const [hide, setHide] = useState(true)
+  const changeState = (i) =>{
+    setHide(!hide)
+  }
 
   return (
-    <Box className="App">
-      <Link
-        className="button"
-        position="absolute"
-        right="10"
-        top="10"
-        width="fit-content"
-        px="2"
-        py="1"
-        border="2px solid white"
-        borderRadius={5}
-        bgColor="#ffffff"
-        _hover={{ border: "2px solid black" }}
-        fontSize={{ sm: "3xl", lg: "xl", xl: "md" }}
-      >
-        View Resume
-      </Link>
-      <Box mx="7.5%" pt={{xs:'0%',lg:"5%"}} my={{ sm: "20%", lg: "7.5%" }}>
-        <Center>
-        {/* <Animation py='5%'/> */}
-        {/* https://drive.google.com/file/d/1jrVPTneEsbwMZ7RkXFD3NopjnpvpS_Di/view?usp=sharing */}
-        {/* <DynamicImage/> */}
-        <Image height={{md:'500px',lg:'400px'}} src='https://drive.google.com/uc?id=1jrVPTneEsbwMZ7RkXFD3NopjnpvpS_Di'/>
-        </Center>
-        <Box textAlign="left">
-          <Text
-            fontSize={{ sm: "5xl", lg: "4xl", xl: "3xl" }}
-            className="header"
-            py="1"
-            fontWeight="extrabold"
-          >
-            <Link to="/about"> Rachel Taskale </Link>, developer + designer
-            based out of New York.
-          </Text>
-          <Text
-            className="subtitle"
-            fontSize={{ sm: "3xl", lg: "xl", xl: "md" }}
-          >
-            I build accessible, inclusive products and experiences for the web
-          </Text>
-        </Box>
-        <Spacer minHeight="200px" />
-
-        <Wrap
-          spacingX="20px"
-          spacingY="70px"
-          display="flex"
-          justify="center"
-          py="20px"
+    <div className="App place-items-center w-full">
+      <div className="px-28 w-full pb-10">
+        <a
+          className="header absolute right-28 top-8 pt-2 pr-2 text-xl font-bold"
+          href="https://docs.google.com/document/d/1pf0A7l3GzRQkIt5cYGGgvUqScWLdYNOr/edit?usp=sharing&ouid=108643512595099329438&rtpof=true&sd=true"
         >
-          {projects.map((item) => (
-            <CustomCard
-              title={item.title}
-              subtitle={item.subtitle}
-              img={item.img}
-              description={item.description}
-              tech={item.tech}
-              github={item.github}
-              buttonName={item.buttonName}
-            />
-          ))}
-        </Wrap>
-        <Box>
-          <Spacer h="200px" />
-          <Center>
-            <Wrap
-              justify="center"
-              alignItems="left"
-              textAlign="left"
-              spacing="20px"
-            >
-              <Box
-                minW={["xl", "lg"]}
-                h="fit-content"
-                textAlign="left"
-                display="flex"
-              >
-                <Avatar
-                  src="https://drive.google.com/uc?id=1WcJD2DoD9VgDgXg4_BEWHvBCNp28BOt1"
-                  width="300px"
-                  size="cover"
-                />
-              </Box>
-              <VStack
-                display="flex"
-                alignContent="left"
-                maxW={["xl", "lg"]}
-                h="fit-content"
-                width="full"
-                // border="1px solid black"
-              >
-                <Box >
-                  <Link href="/about" />
-                  <About/>
-                </Box>
-              </VStack>
-            </Wrap>
-          </Center>
-        </Box>
-      </Box>
-    </Box>
+          Resume
+        </a>
+        <div>
+          <LandingImage className="min-h-80" />
+        </div>
+        <div className="w-full space-y-48 place-content-between relative">
+          <div className="grid grid-cols-2 content-end align-text-bottom ">
+            <div className="header text-5xl font-bold">Rachel Taskale</div>
+            <div className="subtitle text-sm h-full relative  ">
+              <div className="h-fit absolute bottom-0 right-0 font-bold">
+                ENGINEER + DESIGNER BASED OUT OF BROOKLYN, NY
+              </div>
+            </div>
+          </div>
+          <AboutMe className="w-full" />
+          
+          <SoftwareProjects className="w-full " />
+          <ArtProjects />
+         
+        </div>
+      <div className="flex pt-48 justify-center">
+        <div className=" w-fit">
+          <Contact />
+          </div>
+          </div>
+      </div>
+    </div>
   );
 }
-
-export default App;

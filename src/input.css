@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 
 @import './input.css';
 @import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Roboto+Slab:wght@200;300;400;500;700;900&family=Shantell+Sans&family=Source+Code+Pro:wght@300;500&display=swap');
@@ -33,23 +38,16 @@
   outline: var(--projcolor) auto 3px;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
 
-.button{
-  position:"absolute";
-  right:"20";
-  top:"10";
-  width:"fit-content";
-  padding-left: 2;
-  padding-right: 2;
-  padding-top:1;
-  padding-bottom: 1;
-  border-radius:5;
-  color:"white";
-  font-weight:"bold";
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
-body{
-  overflow: hidden;
-}
+
 
 .App {
   min-height: 100vh;
@@ -83,9 +81,14 @@ body{
 }
 
 
+.button{
+    position:"absolute";
+    right:20px;
+    top:10px;
+    width:"fit-content";
+    color:"white";
+  }
 
-
-.button {
-  font-family: 'Chapeau-Medium';
-  /* letter-spacing: '1px'; */
+a:hover {
+  text-decoration: underline;
 }
