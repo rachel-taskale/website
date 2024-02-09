@@ -4,13 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'subtitle-blue': '#243e6a',
-        'red-highlight': "#e6646d",
-        'green-highlight': "#c2d94c",
-        'orange-highlight':"#ff8f40",
-        "blue-highlight":"#56c0fe",
-        "blue-overlay":"#243e6a95",
-        "transparent": "ffffff00"
+        "background": "#081140",
+        "t-primary": "#ECE4C2",
+        "t-secondary": "#8D8AA6",
+        'dark-100':"#252653",
+        'dark-200': '#3F3D67'
+
 
       },
       listStyleType: {
@@ -19,8 +18,15 @@ module.exports = {
         decimal: 'decimal',
         square: 'square',
         dash: '-',
+      },
+      spacing: {
+        '100': '100rem',
+        '600':'600px',
+        'window':'100%'
       }
     },
   },
   plugins: [],
 }
+
+        // "pink-highlight": "#b661de",

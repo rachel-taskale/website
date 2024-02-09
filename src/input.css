@@ -2,37 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=IBM+Plex+Mono:wght@400;500;700&display=swap');
 
-
-@import './input.css';
-@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Roboto+Slab:wght@200;300;400;500;700;900&family=Shantell+Sans&family=Source+Code+Pro:wght@300;500&display=swap');
 .App {
   text-align: center;
 }
 
-/* Font Loading */
-@font-face {
-  font-family: "Chapeau-Black";
-  src: url("./fonts/ChapeauWEB-Black.woff") format("woff");
-}
 
-@font-face {
-  font-family: "Chapeau-Medium";
-  src: url("./fonts/ChapeauWEB-Medium.woff") format("woff");
-}
-
-
-@font-face {
-  font-family: "SuisseNeue-Regular";
-  src: url("./fonts/SuisseNeue-Regular.woff") format("woff"),
-    url("./fonts/SuisseNeue-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Ogg";
-  src: url("./fonts/Ogg-Regular.woff") format("woff"),
-    url("./fonts/Ogg-Regular.woff2") format("woff2");
-}
 
 *:focus {
   outline: var(--projcolor) auto 3px;
@@ -41,6 +17,12 @@
 body::-webkit-scrollbar {
   display: none;
 }
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+
 
 /* Hide scrollbar for IE, Edge and Firefox */
 body {
@@ -53,31 +35,26 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #dfdfde;
-  background-color: #0a0e14;
   text-align: left;
   overflow: hidden;
 }
 
 .header {
-  font-family: 'Ogg';
+  font-family: 'Dela Gothic One';
+  letter-spacing: 1.5px;
 
 }
 
-.header-2 {
-  font-family: 'Chapeau-Black';
-  letter-spacing: '1px';
 
-}
 
 .subtitle {
-  font-family: 'Chapeau-Medium';
+  font-family: 'IBM Plex Mono';
+  /* font-weight: medium; */
   letter-spacing: '1px';
-  color: #243e6a;
 }
 
 .body-text {
-  font-family: 'SuisseNeue-Regular';
+  font-family: 'IBM Plex Mono';
 }
 
 
@@ -91,4 +68,71 @@ body {
 
 a:hover {
   text-decoration: underline;
+}
+
+.custom-modal {
+  transition: opacity 0.25s ease;
+  max-height: "1005px";
+  max-width: "5rem";
+  padding:20px; 
+  
+
+}
+.modal-wrapper{
+  width:90%;
+  height:100%;
+}
+
+
+@media screen and  (min-width:1024px) {
+  .modal-wrapper{
+    position:fixed;
+    width: 50%;
+    height:100%;
+    margin: 20px auto;
+  }
+  
+}
+body { margin: 0; }
+
+.ticker-wrap {
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 3.5rem; 
+}
+.ticker {
+  display: inline-block;
+  margin-top: 5px;
+  animation: marquee 55s linear infinite;
+}
+.item-collection-1 {
+  position: relative;
+  left: 0%;
+  animation: swap 55s linear infinite;
+}
+
+.item {
+  display: inline-block;
+  padding: 0 1rem;
+}
+
+/* Transition */
+@keyframes marquee {
+  0% {
+    transform: translateX(0)
+  }
+  100% {
+    transform: translateX(-100%)
+  }
+}
+
+@keyframes swap {
+  0%, 50% {
+    left: 0%;
+  }
+  50.01%,
+  100% {
+    left: 100%;
+  }
 }

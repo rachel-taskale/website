@@ -638,9 +638,9 @@ video {
     url("./fonts/SuisseNeue-Regular.woff2") format("woff2");
 }
 
+
 @font-face {
   font-family: "Ogg";
-
   src: url("./fonts/Ogg-Regular.woff") format("woff"),
     url("./fonts/Ogg-Regular.woff2") format("woff2");
 }
@@ -653,13 +653,17 @@ video {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #dfdfde;
   background-color: #0a0e14;
   text-align: left;
 }
 
 .header {
   font-family: 'Ogg';
+  letter-spacing: '2px';
+}
+::highlight{
+  color:#0a0e14;
+  background-color:#b661de;
 }
 
 .header-2 {
@@ -670,11 +674,11 @@ video {
 .subtitle {
   font-family: 'Chapeau-Medium';
   letter-spacing: '1px';
-  color: #243e6a;
 }
 
 .body-text {
   font-family: 'SuisseNeue-Regular';
+  /* color: #ffffff80; */
 }
 
 .button{
@@ -688,3 +692,5 @@ video {
 .image::before{
   background-color: #56c0fe;
 }
+
+

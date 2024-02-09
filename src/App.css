@@ -5,29 +5,6 @@
   text-align: center;
 }
 
-/* Font Loading */
-@font-face {
-  font-family: "Chapeau-Black";
-  src: url("./fonts/ChapeauWEB-Black.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Chapeau-Medium";
-  src: url("./fonts/ChapeauWEB-Medium.woff") format("woff");
-}
-
-
-@font-face {
-  font-family: "SuisseNeue-Regular";
-  src: url("./fonts/SuisseNeue-Regular.woff") format("woff"),
-    url("./fonts/SuisseNeue-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Ogg";
-  src: url("./fonts/Ogg-Regular.woff") format("woff"),
-    url("./fonts/Ogg-Regular.woff2") format("woff2");
-}
 
 *:focus {
   outline: var(--projcolor) auto 3px;
