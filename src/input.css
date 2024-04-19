@@ -2,7 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=IBM+Plex+Mono:wght@400;500;700&display=swap');
+@font-face {
+  font-family: "Cooper";
+  src: url("../public/fonts/cooper_medium_bt.ttf");
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 .App {
   text-align: center;
@@ -14,14 +20,9 @@
   outline: var(--projcolor) auto 3px;
 }
 
-body::-webkit-scrollbar {
+::-webkit-scrollbar {
   display: none;
 }
-
-.modal::-webkit-scrollbar {
-  display: none;
-}
-
 
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -40,7 +41,7 @@ body {
 }
 
 .header {
-  font-family: 'Dela Gothic One';
+  font-family: 'Cooper';
   letter-spacing: 1.5px;
 
 }
@@ -48,7 +49,7 @@ body {
 
 
 .subtitle {
-  font-family: 'IBM Plex Mono';
+  font-family: 'Inter';
   /* font-weight: medium; */
   letter-spacing: '1px';
 }
@@ -58,17 +59,42 @@ body {
 }
 
 
-.button{
-    position:"absolute";
-    right:20px;
-    top:10px;
-    width:"fit-content";
-    color:"white";
-  }
-
 a:hover {
   text-decoration: underline;
 }
+
+.nav:hover{
+  display:flex;
+  transform: translate(20px);
+  /* border-bottom:2px solid white; */
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 192, 203, 0); /* Pink color with transparency */
+  transition: background-color 0.3s ease; /* Transition effect */
+  opacity: 0; /* Initially hidden */
+}
+
+.image-container:hover .overlay {
+  background-color: #C2A7F7; /* Pink color with higher opacity on hover */
+  opacity: 1; /* Show the overlay on hover */
+}
+
+.overlay p {
+  color: #F8F8F2; /* Text color */
+  text-align: center;
+}
+
+
 
 .custom-modal {
   transition: opacity 0.25s ease;
@@ -102,7 +128,6 @@ body { margin: 0; }
   height: 3.5rem; 
 }
 .ticker {
-  display: inline-block;
   margin-top: 5px;
   animation: marquee 55s linear infinite;
 }

@@ -33,7 +33,7 @@ body{
   display: flex;
   flex-direction: column;
   color: #dfdfde;
-  background-color: #0a0e14;
+  background-color: #09061f;
   text-align: left;
   overflow: hidden;
 }
@@ -51,8 +51,8 @@ body{
 
 .subtitle {
   font-family: 'Chapeau-Medium';
-  letter-spacing: '1px';
-  color: #243e6a;
+  letter-spacing: '.5px';
+
 }
 
 .body-text {
