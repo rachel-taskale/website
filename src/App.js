@@ -11,7 +11,6 @@ export default function App() {
   const [mobileView, setMobileView] = useState(
     window.innerWidth > 1200 ? true : false
   );
-
   const designStuff = [
     {
       title: "Van Gogh Inspired Hands",
@@ -24,6 +23,18 @@ export default function App() {
       subtitle: "Photoshop",
       link: "https://www.instagram.com/p/CjVkAY7uKDE/",
       img: "https://imgur.com/jkpRzD3.jpg",
+    },
+    {
+      title: "Kestrel",
+      subtitle: "Figma",
+      link: "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/logos/Kestrel%20Final.svg",
+      img: "https://i.imgur.com/hbm5Ovk.png",
+    },
+    {
+      title: "Metaworld",
+      subtitle: "Figma",
+      link: "https://farama.org/projects",
+      img: "https://i.imgur.com/gBQfHGc.png",
     },
     {
       title: "Fishy Illustration",
@@ -95,7 +106,6 @@ export default function App() {
   useEffect(() => {
     const handleResize = () => {
       setMobileView(window.innerWidth > 1200 ? true : false);
-      console.log(mobileView);
     };
 
     window.addEventListener("resize", handleResize);
@@ -117,7 +127,7 @@ export default function App() {
         </a>
       </div>
       <div className="space-y-80 lg:space-y-56 2xl:space-y-80 ">
-        <div className="w-full pt-40 lg:pt-0 space-y-40 mb-24">
+        <div className="w-full pt-40 lg:pt-14 space-y-40 mb-24">
           <div className="w-full mb-20 flex place-content-center">
             <img className="" src="/profileDrawing.svg" alt="Profile Drawing" />
           </div>
@@ -134,9 +144,10 @@ export default function App() {
         </div>
 
         <div className="flex flex-wrap gap-4 lg:gap-10 2xl:gap-20">
-          <div className="header w-72 h-80 text-t-primary text-6xl lg:text-4xl flex items-center leading-relaxed">
+          <div className="header w-full text-t-primary text-6xl flex place-content-center lg:items-center leading-relaxed lg:w-72 lg:h-80 lg:text-4xl">
             <div >Creative Projects</div>
           </div>
+
           {designStuff.map((item) => (
             <div className="image-container">
               <img
@@ -157,12 +168,12 @@ export default function App() {
           ))}
           <div className="w-full flex place-content-end text-t-secondary">
             <a className="font-bold h-fit w-fit px-4 py-2 header rounded-sm border-t-secondary text-4xl lg:text-2xl items-center
-            hover:bg-t-secondary hover:text-background flex " 
-            href="https://instagram.com/art_by_task" target="_blank">
+            hover:bg-t-secondary hover:text-background flex "
+              href="https://instagram.com/art_by_task" target="_blank">
               <div className="">Art Instagram</div>
-              <MdArrowRightAlt  className="h-full text-4xl lg:text-2xl"/> 
-              </a>
-              
+              <MdArrowRightAlt className="h-full text-4xl lg:text-2xl" />
+            </a>
+
           </div>
         </div>
 
@@ -175,22 +186,21 @@ export default function App() {
           <div className="space-y-20">
             {softwareStuff.map((item) => (
               <div className={`${item.mode} inline-block py-20 lg:py-64 px-20 lg:flex lg:grid lg:grid-cols-3 gap-8 rounded-lg`}>
-
                 <div className="w-full flex justify-center scale-1.5 pb-20 lg:pb-0">
-                  <div className={`${item.img} scale-1.5 md:w-56 md:h-64 lg:w-72 lg:h-80 rounded-md bg-background`} />
+                  <div className={`${item.img} scale-1.5  w-72 h-80 rounded-md bg-background`} />
                 </div>
                 <div className="inline space-y-20 lg:space-y-0 lg:col-span-2 px-20 justify-center items-center flex justify-center">
-                <div className="space-y-20 lg:space-y-8">
-                  <div className="header leading-relaxed text-6xl lg:text-4xl">
-                    {item.title}
+                  <div className="space-y-20 lg:space-y-8">
+                    <div className="header leading-relaxed text-6xl lg:text-4xl">
+                      {item.title}
+                    </div>
+                    <div className="subtitle text-4xl lg:text-lg leading-relaxed">
+                      {item.description}
+                    </div>
+                    <div className="w-full flex text-4xl lg:text-lg place-content-end">
+                      {item.link_tag}
+                    </div>
                   </div>
-                  <div className="subtitle text-4xl lg:text-lg leading-relaxed">
-                    {item.description}
-                  </div>
-                  <div className="w-full flex text-4xl lg:text-lg place-content-end">
-                    {item.link_tag}
-                  </div>
-                </div>
                 </div>
               </div>
             ))}
