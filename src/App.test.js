@@ -49,7 +49,8 @@ test('connects the real contact address and preserves creative work', () => {
   expect(screen.getByRole('link', { name: 'Email ↗' })).toHaveAttribute('href', 'mailto:racheltaskale@gmail.com');
   expect(screen.getByAltText('Van Gogh Inspired Hands')).toBeInTheDocument();
   expect(screen.getByAltText('Pixel Cactus II')).toBeInTheDocument();
-  expect(screen.getByText('Coming soon.')).toBeInTheDocument();
+  expect(screen.queryByText('Coming soon.')).not.toBeInTheDocument();
+  expect(screen.queryByRole('link', { name: 'Words' })).not.toBeInTheDocument();
   expect(screen.queryByText('College post 01')).not.toBeInTheDocument();
 });
 
