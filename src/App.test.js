@@ -46,7 +46,7 @@ test('project navigation follows scrolling in both directions', () => {
 
 test('connects the real contact address and preserves creative work', () => {
   render(<App />);
-  expect(screen.getByRole('link', { name: 'Email ↗' })).toHaveAttribute('href', 'mailto:racheltaskale@gmail.com');
+  expect(screen.getByRole('link', { name: 'racheltaskale@gmail.com ↗' })).toHaveAttribute('href', 'mailto:racheltaskale@gmail.com');
   expect(screen.getByAltText('Van Gogh Inspired Hands')).toBeInTheDocument();
   expect(screen.getByAltText('Pixel Cactus II')).toBeInTheDocument();
   expect(screen.queryByText('Coming soon.')).not.toBeInTheDocument();
