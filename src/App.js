@@ -41,12 +41,10 @@ function useActiveProject() {
 
 function ProjectIndex({ activeId }) {
   return <nav className="project-index" aria-label="Engineering projects">
-    <p className="meta">In this collection</p>
+    <p className="meta">Selected work</p>
     {projects.map((project, i) => <a key={project.id} href={`#${project.id}`} aria-current={activeId === project.id ? 'location' : undefined}>
-      <span className="index-number">0{i + 1}</span><span>{project.company}</span><span className="index-arrow" aria-hidden="true">↘</span>
+      <span className="index-number">0{i + 1}</span><span>{project.company}</span>
     </a>)}
-    <a href="#art" className="art-index"><span className="index-number">04—11</span><span>Paintings & drawings</span><span className="index-arrow" aria-hidden="true">↘</span></a>
-    <p className="index-note">Selected projects<br />and personal work.</p>
   </nav>;
 }
 
