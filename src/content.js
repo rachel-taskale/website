@@ -1,21 +1,21 @@
 export const projects = [
   {
     id: "middesk", company: "Middesk", theme: "Connected data",
-    role: "Software Engineer · Sep 2025 — Sep 2026",
+    role: "Software Engineer",
     title: "People-level risk checks for SMB underwriting.",
     description: "Extended UCC lien infrastructure from business-only workflows to support people, while unifying bulk data and live searches behind the same product surface.",
     throughline: "Connect fragmented data to a clearer decision.", tags: "Connected data · Product engineering",
   },
   {
     id: "runway", company: "Runway", theme: "Workflow orchestration",
-    role: "Full-Stack Software Engineer · Jul 2024 — Jun 2025",
+    role: "Full-Stack Software Engineer",
     title: "Scheduled mobile releases without babysitting the deploy.",
     description: "Owned scheduled Google Play rollouts end to end, including release orchestration, calendar visibility, notifications, and production support.",
     throughline: "Turn a manual handoff into a dependable workflow.", tags: "Workflow orchestration · Full-stack engineering",
   },
   {
     id: "broadridge", company: "Broadridge", theme: "Reliable data systems",
-    role: "Associate Software Engineer · Jun 2022 — Jul 2024",
+    role: "Associate Software Engineer",
     title: "Replay production traffic without touching production.",
     description: "Built a traffic-replay framework with AWS Lambda and Kafka that scaled reconciliation testing to millions of messages and cut manual debugging work.",
     throughline: "Make high-volume data reliable and easier to operate.", tags: "Data reliability · Distributed systems",
