@@ -63,3 +63,6 @@
 
 [hidden]{display:none!important}
 .more-grid>div:focus{outline:none}
+
+.piece-landscape-a{grid-column:1 / span 6}.piece-landscape-b{grid-column:8 / span 5;margin-top:80px}.piece-landscape-c{grid-column:3 / span 6}
+@media(max-width:650px){.piece-landscape-a{grid-column:1 / span 5}.piece-landscape-b{grid-column:2 / span 5;margin-top:0}.piece-landscape-c{grid-column:1 / span 4}}
