@@ -263,5 +263,47 @@
     "description": "",
     "thoughtProcess": [],
     "links": []
+  },
+  {
+    "slug": "coastal-hills",
+    "title": "Coastal hills",
+    "medium": "Painting",
+    "file": "arena-51355017.webp",
+    "description": "",
+    "thoughtProcess": [],
+    "links": [
+      {
+        "label": "View original image",
+        "url": "https://d2w9rnfcy7mm78.cloudfront.net/51355017/original_b03d1272627589dddbbe7e7d58fdc2c1.jpg?1791912948?bc=0"
+      }
+    ]
+  },
+  {
+    "slug": "coastal-path",
+    "title": "Coastal path",
+    "medium": "Painting",
+    "file": "arena-51354913.webp",
+    "description": "",
+    "thoughtProcess": [],
+    "links": [
+      {
+        "label": "View original image",
+        "url": "https://d2w9rnfcy7mm78.cloudfront.net/51354913/original_3f7ab41f7b722909de8ed8bc5ecd4e9b.jpg?1791912850?bc=0"
+      }
+    ]
+  },
+  {
+    "slug": "lake-study",
+    "title": "Lake study",
+    "medium": "Painting",
+    "file": "arena-50968619.webp",
+    "description": "",
+    "thoughtProcess": [],
+    "links": [
+      {
+        "label": "View original image",
+        "url": "https://d2w9rnfcy7mm78.cloudfront.net/50968619/original_a4d8dce013222b1da06c284c36c1b011.jpg?1790899036?bc=0"
+      }
+    ]
   }
 ]
