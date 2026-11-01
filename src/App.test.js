@@ -5,6 +5,9 @@ let positions;
 let animationFrame;
 
 beforeEach(() => {
+  window.history.replaceState(null, '', '/');
+  window.scrollTo = jest.fn();
+  HTMLElement.prototype.scrollIntoView = jest.fn();
   positions = { middesk: 100, runway: 1000, broadridge: 2000 };
   jest.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function () {
     return { top: positions[this.id] ?? 0, bottom: 0, left: 0, right: 0, width: 0, height: 0 };
@@ -47,7 +50,9 @@ test('project navigation follows scrolling in both directions', () => {
 test('connects the real contact address and preserves creative work', () => {
   render(<App />);
   expect(screen.getByRole('link', { name: 'racheltaskale@gmail.com' })).toHaveAttribute('href', 'mailto:racheltaskale@gmail.com');
+  fireEvent.click(screen.getByRole('button', {name:'Load more'}));
   expect(screen.getByAltText('Van Gogh Inspired Hands')).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', {name:'Load more'}));
   expect(screen.getByAltText('Pixel Cactus II')).toBeInTheDocument();
   expect(screen.queryByText('Coming soon.')).not.toBeInTheDocument();
   expect(screen.queryByRole('link', { name: 'Words' })).not.toBeInTheDocument();
@@ -59,4 +64,25 @@ test('cancels pending scroll work on unmount', () => {
   fireEvent.scroll(window);
   unmount();
   expect(window.cancelAnimationFrame).toHaveBeenCalledWith(1);
+});
+
+
+test('flower routes share approved notes and image zoom controls', () => {
+  window.history.replaceState(null, '', '/#art/green-and-magenta');
+  render(<App />);
+  expect(screen.getByRole('heading', {name:'Flower studies'})).toBeInTheDocument();
+  expect(screen.getByText(/comfortable with gouache/)).toBeInTheDocument();
+  expect(screen.getAllByRole('button', {name:/^View (Pink|Red|Green).* image$/})).toHaveLength(3);
+  expect(screen.queryByText(/placeholder/i)).not.toBeInTheDocument();
+});
+
+test('hands notes skip removed artwork and unfinished pages have no prompts', () => {
+  window.history.replaceState(null, '', '/#art/van-gogh-inspired-hands');
+  render(<App />);
+  expect(screen.getByText('This is one of the works I am most proud of.')).toBeInTheDocument();
+  expect(screen.getByRole('link', {name:'Next piece Fishy Illustration'})).toBeInTheDocument();
+  expect(screen.queryByText('High on Self-Esteem')).not.toBeInTheDocument();
+  act(() => { window.history.replaceState(null, '', '/#art/fishy-illustration'); window.dispatchEvent(new HashChangeEvent('hashchange')); });
+  expect(screen.queryByText(/placeholder|Your thoughts can go here/)).not.toBeInTheDocument();
+  expect(screen.queryByRole('heading', {name:'Thought process'})).not.toBeInTheDocument();
 });
