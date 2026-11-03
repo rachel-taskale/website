@@ -66,3 +66,17 @@
 
 .piece-landscape-a{grid-column:1 / span 6}.piece-landscape-b{grid-column:8 / span 5;margin-top:80px}.piece-landscape-c{grid-column:3 / span 6}
 @media(max-width:650px){.piece-landscape-a{grid-column:1 / span 5}.piece-landscape-b{grid-column:2 / span 5;margin-top:0}.piece-landscape-c{grid-column:1 / span 4}}
+
+/* A compact gallery with natural image proportions. */
+.art-heading{margin-bottom:36px}
+.art-composition,.more-grid{display:block;column-count:3;column-gap:24px}
+.art-composition>.piece,.more-grid>div{display:inline-block;width:100%;max-width:none;margin:0 0 32px;break-inside:avoid;vertical-align:top}
+.art-composition .art-button,.more-grid .art-button{display:block;width:100%;height:auto}
+.art-composition .art-button img,.more-grid .art-button img{display:block;width:100%;height:auto;max-height:none;object-fit:contain}
+.art-composition .caption,.more-grid .caption{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:12px;line-height:1.5}
+.more-grid .read-notes{display:inline;margin-top:0}
+.more-art{margin-top:0}
+.has-loaded-art .load-more-controls{margin-top:8px}
+@media(max-width:1000px){.art-composition,.more-grid{column-gap:20px}.art-composition>.piece,.more-grid>div{margin-bottom:28px}}
+@media(max-width:760px){.art-composition,.more-grid{column-count:2;column-gap:18px}}
+@media(max-width:420px){.art-composition,.more-grid{column-gap:14px}.art-composition>.piece,.more-grid>div{margin-bottom:24px}.art-composition .caption,.more-grid .caption{display:block;font-size:11px}.art-composition .read-notes,.more-grid .read-notes{display:block;margin-top:3px;font-size:11px}}
