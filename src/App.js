@@ -4,7 +4,7 @@ import { artworks as collection, artImage, canonicalStory, storyForHash, ReadNot
 import './App.css';
 export { projects } from './content';
 
-const extraIndices = [5, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const extraIndices = [5, 7, 8, 9, 10, 11, 12, 20, 13, 14, 15];
 
 function useActiveProject() {
   const [activeId, setActiveId] = useState(projects[0].id);
