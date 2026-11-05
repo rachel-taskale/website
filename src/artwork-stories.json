@@ -232,7 +232,7 @@
     "links": [
       {
         "label": "View project",
-        "url": "https://farama.org/projects"
+        "url": "https://metaworld.farama.org/"
       }
     ]
   },
@@ -325,6 +325,20 @@
       {
         "label": "View original image",
         "url": "https://d2w9rnfcy7mm78.cloudfront.net/50968619/original_a4d8dce013222b1da06c284c36c1b011.jpg?1790899036?bc=0"
+      }
+    ]
+  },
+  {
+    "slug": "mo-gymnasium",
+    "title": "MO-Gymnasium",
+    "medium": "Logo design",
+    "file": "mo-gymnasium.webp",
+    "description": "",
+    "thoughtProcess": [],
+    "links": [
+      {
+        "label": "View project",
+        "url": "https://mo-gymnasium.farama.org/"
       }
     ]
   }
