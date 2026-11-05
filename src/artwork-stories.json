@@ -355,5 +355,14 @@
         "url": "https://stable-retro.farama.org/"
       }
     ]
+  },
+  {
+    "slug": "zion",
+    "title": "Zion",
+    "medium": "Painting",
+    "file": "zion.webp",
+    "description": "",
+    "thoughtProcess": [],
+    "links": []
   }
 ]
