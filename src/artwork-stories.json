@@ -341,5 +341,19 @@
         "url": "https://mo-gymnasium.farama.org/"
       }
     ]
+  },
+  {
+    "slug": "stable-retro",
+    "title": "Stable Retro",
+    "medium": "Logo design",
+    "file": "stable-retro.webp",
+    "description": "",
+    "thoughtProcess": [],
+    "links": [
+      {
+        "label": "View project",
+        "url": "https://stable-retro.farama.org/"
+      }
+    ]
   }
 ]
