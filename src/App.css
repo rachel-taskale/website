@@ -80,3 +80,5 @@
 @media(max-width:1000px){.art-composition,.more-grid{column-gap:20px}.art-composition>.piece,.more-grid>div{margin-bottom:28px}}
 @media(max-width:760px){.art-composition,.more-grid{column-count:2;column-gap:18px}}
 @media(max-width:420px){.art-composition,.more-grid{column-gap:14px}.art-composition>.piece,.more-grid>div{margin-bottom:24px}.art-composition .caption,.more-grid .caption{display:block;font-size:11px}.art-composition .read-notes,.more-grid .read-notes{display:block;margin-top:3px;font-size:11px}}
+
+.story-group-images:has(>figure:nth-child(2):last-child){grid-template-columns:repeat(2,minmax(0,1fr))}

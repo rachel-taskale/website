@@ -82,7 +82,20 @@ test('hands notes skip removed artwork and unfinished pages have no prompts', ()
   expect(screen.getByText('This is one of the works I am most proud of.')).toBeInTheDocument();
   expect(screen.getByRole('link', {name:'Next piece Fishy Illustration'})).toBeInTheDocument();
   expect(screen.queryByText('High on Self-Esteem')).not.toBeInTheDocument();
-  act(() => { window.history.replaceState(null, '', '/#art/fishy-illustration'); window.dispatchEvent(new HashChangeEvent('hashchange')); });
+  act(() => { window.history.replaceState(null, '', '/#art/metaworld'); window.dispatchEvent(new HashChangeEvent('hashchange')); });
   expect(screen.queryByText(/placeholder|Your thoughts can go here/)).not.toBeInTheDocument();
   expect(screen.queryByRole('heading', {name:'Thought process'})).not.toBeInTheDocument();
+});
+
+
+test('both pixel plant routes open their shared writeup and skip duplicate pages', () => {
+  window.history.replaceState(null, '', '/#art/pixel-cactus-ii');
+  render(<App />);
+  expect(screen.getByRole('heading', {name:'Pixel plants'})).toBeInTheDocument();
+  expect(screen.getByRole('button', {name:'View Pixel Cactus I image'})).toBeInTheDocument();
+  expect(screen.getByRole('button', {name:'View Pixel Cactus II image'})).toBeInTheDocument();
+  expect(screen.getByRole('link', {name:'Previous piece Fishy Illustration'})).toBeInTheDocument();
+  expect(screen.getByRole('link', {name:'Next piece Kestrel'})).toBeInTheDocument();
+  act(() => { window.history.replaceState(null, '', '/#art/pixel-cactus-i'); window.dispatchEvent(new HashChangeEvent('hashchange')); });
+  expect(screen.getByRole('heading', {name:'Pixel plants'})).toBeInTheDocument();
 });

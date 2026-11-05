@@ -173,7 +173,10 @@
     "medium": "Gouache + colored pencil",
     "file": "fish.webp",
     "description": "",
-    "thoughtProcess": [],
+    "thoughtProcess": [
+      "I love drawing fish because they’re so colorful and generally have interesting shapes. There’s also a fluidity to how they move through water that makes them fun to draw. With this piece, the idea was to capture some of that movement and variety in a fun interpretation of fish.",
+      "I was trying to move more into an illustration mindset, using flatter elements like the bubbles and lines to show the undercurrents you would see under the sea. This was also an exercise in drawing fish from many different perspectives and figuring out how to show their shapes from different angles."
+    ],
     "links": [
       {
         "label": "View original post",
@@ -182,13 +185,25 @@
     ]
   },
   {
-    "slug": "pixel-cactus-i",
-    "title": "Pixel Cactus I",
+    "slug": "pixel-plants",
+    "title": "Pixel plants",
     "medium": "Procreate",
     "file": "cactus-1.webp",
     "description": "",
-    "thoughtProcess": [],
-    "links": []
+    "thoughtProcess": [
+      "These two drawings were for a friend’s side project in college. When Dynamic Island came to the iPhone, my friends wanted to create an app with a little digital plant that would live on your phone. You could water it every day and watch it grow.",
+      "I thought it would be cool to learn how to make those kinds of designs, so I created these two for the project."
+    ],
+    "links": [],
+    "galleryTitle": "Pixel Cactus I",
+    "galleryMedium": "Procreate",
+    "aliases": [
+      "pixel-cactus-i"
+    ],
+    "imageIndices": [
+      10,
+      15
+    ]
   },
   {
     "slug": "kestrel",
@@ -196,7 +211,10 @@
     "medium": "Figma",
     "file": "kestrel.webp",
     "description": "",
-    "thoughtProcess": [],
+    "thoughtProcess": [
+      "This was a commission from my friend’s startup in college, which was a bank specializing in providing loans to agriculture. Since the name of their startup was Kestrel and it previously had a bird design on it, I took the same bird design but made it more explicit in its messaging of providing support to agriculture.",
+      "The lines represent the lines of crops you would see in the field, but can also be interpreted as the wing of the kestrel."
+    ],
     "links": [
       {
         "label": "View project",
@@ -253,7 +271,8 @@
     "file": "cactus-2.webp",
     "description": "",
     "thoughtProcess": [],
-    "links": []
+    "links": [],
+    "group": "pixel-plants"
   },
   {
     "slug": "japanese-tea-garden-tree",
@@ -261,7 +280,10 @@
     "medium": "Drawing",
     "file": "japanese-tea-garden-tree.jpg",
     "description": "",
-    "thoughtProcess": [],
+    "thoughtProcess": [
+      "I’ve always struggled more with digital art because I usually use the material to help inspire the drawings I like to do. As someone who is color-forward, having access to an unlimited color palette can lead to a less curated drawing.",
+      "This was the first drawing where it clicked for me to try a more illustrative approach. I wasn’t going to get the same textures as physical mediums with digital art, so I needed to create the texture myself through hatching and shading, and by creating interesting lines."
+    ],
     "links": []
   },
   {
