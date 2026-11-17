@@ -4,7 +4,7 @@ import { artworks as collection, artImage, artSrcSet, canonicalStory, storyForHa
 import './App.css';
 export { projects } from './content';
 
-const featuredIndices = [1, 2, 3, 26, 6, 4, 25, 17, 18, 19, 16, 22];
+const featuredIndices = [1, 2, 3, 6, 4, 25, 17, 18, 19, 16, 22];
 
 const extraIndices = [5, 7, 8, 9, 10, 11, 12, 20, 21, 13, 14, 15];
 

@@ -594,21 +594,24 @@
     "slug": "oranges",
     "title": "Oranges",
     "medium": "Painting",
-    "file": "oranges-portfolio-v2.webp",
+    "file": "oranges-study.webp",
     "description": "",
     "thoughtProcess": [],
     "links": [],
-    "width": 1200,
-    "height": 1600,
+    "width": 1800,
+    "height": 2400,
     "thumbnails": [
       {
-        "file": "thumbnails/oranges-portfolio-v2-480.webp",
+        "file": "thumbnails/oranges-study-480.webp",
         "width": 480
       },
       {
-        "file": "thumbnails/oranges-portfolio-v2-960.webp",
+        "file": "thumbnails/oranges-study-960.webp",
         "width": 960
       }
+    ],
+    "aliases": [
+      "oranges-ii"
     ]
   },
   {
@@ -654,27 +657,6 @@
       },
       {
         "file": "thumbnails/cows-portfolio-v2-960.webp",
-        "width": 960
-      }
-    ]
-  },
-  {
-    "slug": "oranges-ii",
-    "title": "Oranges II",
-    "medium": "Painting",
-    "file": "oranges-study.webp",
-    "description": "",
-    "thoughtProcess": [],
-    "links": [],
-    "width": 1800,
-    "height": 2400,
-    "thumbnails": [
-      {
-        "file": "thumbnails/oranges-study-480.webp",
-        "width": 480
-      },
-      {
-        "file": "thumbnails/oranges-study-960.webp",
         "width": 960
       }
     ]
