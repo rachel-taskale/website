@@ -3,7 +3,7 @@
     "slug": "fire-escape",
     "title": "Fire escape",
     "medium": "Painting",
-    "file": "arena-50968629.webp",
+    "file": "fire-escape-portfolio.webp",
     "description": "",
     "thoughtProcess": [
       "I was walking through Lower Haight in the early evening when the light hitting the side of this building reminded me of my childhood bedroom: a green wall brightened and warmed by the sunset.",
@@ -14,16 +14,28 @@
         "label": "View on Are.na",
         "url": "https://www.are.na/block/50968629"
       }
+    ],
+    "width": 1388,
+    "height": 1440,
+    "thumbnails": [
+      {
+        "file": "thumbnails/fire-escape-portfolio-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/fire-escape-portfolio-960.webp",
+        "width": 960
+      }
     ]
   },
   {
     "slug": "flower-studies",
     "title": "Flower studies",
     "medium": "Paintings",
-    "file": "arena-50439888.webp",
+    "file": "flower-pink-portfolio.webp",
     "description": "",
     "thoughtProcess": [
-      "I was walking through the Conservatory of Flowers, and these were some of my favorite plants in the museum. The one on the right is beautiful and has a whole ecosystem living in its center, with water, bugs, and bacteria.",
+      "These were some of my favorite plants at the Conservatory of Flowers. The one on the right has a whole ecosystem living in its center, with water, bugs, and bacteria.",
       "I started with the flower in the middle, then expanded to the other two and thought they would work well as a triptych.",
       "These flower studies were also a way for me to get more comfortable with gouache."
     ],
@@ -50,13 +62,21 @@
       1,
       2,
       3
+    ],
+    "width": 829,
+    "height": 1133,
+    "thumbnails": [
+      {
+        "file": "thumbnails/flower-pink-portfolio-480.webp",
+        "width": 480
+      }
     ]
   },
   {
     "slug": "red-flower-study",
     "title": "Red flower study",
     "medium": "Painting",
-    "file": "arena-50439889.webp",
+    "file": "flower-red-portfolio.webp",
     "description": "",
     "thoughtProcess": [],
     "links": [
@@ -65,13 +85,21 @@
         "url": "https://www.are.na/block/50439889"
       }
     ],
-    "group": "flower-studies"
+    "group": "flower-studies",
+    "width": 953,
+    "height": 1240,
+    "thumbnails": [
+      {
+        "file": "thumbnails/flower-red-portfolio-480.webp",
+        "width": 480
+      }
+    ]
   },
   {
     "slug": "green-and-magenta",
     "title": "Green & magenta",
     "medium": "Painting",
-    "file": "arena-50439887.webp",
+    "file": "flower-green-magenta-portfolio.webp",
     "description": "",
     "thoughtProcess": [],
     "links": [
@@ -80,7 +108,15 @@
         "url": "https://www.are.na/block/50439887"
       }
     ],
-    "group": "flower-studies"
+    "group": "flower-studies",
+    "width": 735,
+    "height": 880,
+    "thumbnails": [
+      {
+        "file": "thumbnails/flower-green-magenta-portfolio-480.webp",
+        "width": 480
+      }
+    ]
   },
   {
     "slug": "portrait-study",
@@ -96,6 +132,18 @@
       {
         "label": "View on Are.na",
         "url": "https://www.are.na/block/50968843"
+      }
+    ],
+    "width": 1080,
+    "height": 1440,
+    "thumbnails": [
+      {
+        "file": "thumbnails/arena-50968843-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/arena-50968843-960.webp",
+        "width": 960
       }
     ]
   },
@@ -115,6 +163,18 @@
         "label": "View on Are.na",
         "url": "https://www.are.na/block/50968850"
       }
+    ],
+    "width": 1289,
+    "height": 1440,
+    "thumbnails": [
+      {
+        "file": "thumbnails/arena-50968850-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/arena-50968850-960.webp",
+        "width": 960
+      }
     ]
   },
   {
@@ -131,6 +191,18 @@
         "label": "View on Are.na",
         "url": "https://www.are.na/block/50968856"
       }
+    ],
+    "width": 1440,
+    "height": 1080,
+    "thumbnails": [
+      {
+        "file": "thumbnails/arena-50968856-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/arena-50968856-960.webp",
+        "width": 960
+      }
     ]
   },
   {
@@ -146,6 +218,14 @@
       {
         "label": "View on Are.na",
         "url": "https://www.are.na/block/50968864"
+      }
+    ],
+    "width": 826,
+    "height": 448,
+    "thumbnails": [
+      {
+        "file": "thumbnails/arena-50968864-480.webp",
+        "width": 479
       }
     ]
   },
@@ -165,11 +245,19 @@
         "label": "View original post",
         "url": "https://www.instagram.com/p/B_aifC3Fele/"
       }
+    ],
+    "width": 958,
+    "height": 1289,
+    "thumbnails": [
+      {
+        "file": "thumbnails/hands-480.webp",
+        "width": 480
+      }
     ]
   },
   {
     "slug": "fishy-illustration",
-    "title": "Fishy Illustration",
+    "title": "Fish Illustration",
     "medium": "Gouache + colored pencil",
     "file": "fish.webp",
     "description": "",
@@ -181,6 +269,18 @@
       {
         "label": "View original post",
         "url": "https://www.instagram.com/p/CYHfSGgF5SO/"
+      }
+    ],
+    "width": 1600,
+    "height": 1184,
+    "thumbnails": [
+      {
+        "file": "thumbnails/fish-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/fish-960.webp",
+        "width": 959
       }
     ]
   },
@@ -203,7 +303,10 @@
     "imageIndices": [
       10,
       15
-    ]
+    ],
+    "width": 400,
+    "height": 400,
+    "thumbnails": []
   },
   {
     "slug": "kestrel",
@@ -220,6 +323,18 @@
         "label": "View project",
         "url": "https://github.com/rachel-taskale/GraphicDesignWork/blob/main/logos/Kestrel%20Final.svg"
       }
+    ],
+    "width": 1000,
+    "height": 1000,
+    "thumbnails": [
+      {
+        "file": "thumbnails/kestrel-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/kestrel-960.webp",
+        "width": 960
+      }
     ]
   },
   {
@@ -233,6 +348,18 @@
       {
         "label": "View project",
         "url": "https://metaworld.farama.org/"
+      }
+    ],
+    "width": 1000,
+    "height": 1000,
+    "thumbnails": [
+      {
+        "file": "thumbnails/metaworld-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/metaworld-960.webp",
+        "width": 960
       }
     ]
   },
@@ -248,6 +375,14 @@
         "label": "View original post",
         "url": "https://www.linkedin.com/posts/racheltaskale_10xgrowth-impact-startup-activity-7063561214085279744-x_m6"
       }
+    ],
+    "width": 800,
+    "height": 847,
+    "thumbnails": [
+      {
+        "file": "thumbnails/zoom-480.webp",
+        "width": 480
+      }
     ]
   },
   {
@@ -262,7 +397,10 @@
         "label": "View original post",
         "url": "https://www.linkedin.com/posts/racheltaskale_hypemusiconly-mentalhealthawareness-partnership-activity-7069488582373048320-TLvC"
       }
-    ]
+    ],
+    "width": 433,
+    "height": 783,
+    "thumbnails": []
   },
   {
     "slug": "pixel-cactus-ii",
@@ -272,7 +410,10 @@
     "description": "",
     "thoughtProcess": [],
     "links": [],
-    "group": "pixel-plants"
+    "group": "pixel-plants",
+    "width": 283,
+    "height": 375,
+    "thumbnails": []
   },
   {
     "slug": "japanese-tea-garden-tree",
@@ -284,7 +425,19 @@
       "I’ve always struggled more with digital art because I usually use the material to help inspire the drawings I like to do. As someone who is color-forward, having access to an unlimited color palette can lead to a less curated drawing.",
       "This was the first drawing where it clicked for me to try a more illustrative approach. I wasn’t going to get the same textures as physical mediums with digital art, so I needed to create the texture myself through hatching and shading, and by creating interesting lines."
     ],
-    "links": []
+    "links": [],
+    "width": 2048,
+    "height": 2048,
+    "thumbnails": [
+      {
+        "file": "thumbnails/japanese-tea-garden-tree-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/japanese-tea-garden-tree-960.webp",
+        "width": 960
+      }
+    ]
   },
   {
     "slug": "coastal-hills",
@@ -297,6 +450,18 @@
       {
         "label": "View original image",
         "url": "https://d2w9rnfcy7mm78.cloudfront.net/51355017/original_b03d1272627589dddbbe7e7d58fdc2c1.jpg?1791912948?bc=0"
+      }
+    ],
+    "width": 1200,
+    "height": 1600,
+    "thumbnails": [
+      {
+        "file": "thumbnails/arena-51355017-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/arena-51355017-960.webp",
+        "width": 960
       }
     ]
   },
@@ -312,6 +477,18 @@
         "label": "View original image",
         "url": "https://d2w9rnfcy7mm78.cloudfront.net/51354913/original_3f7ab41f7b722909de8ed8bc5ecd4e9b.jpg?1791912850?bc=0"
       }
+    ],
+    "width": 1200,
+    "height": 1600,
+    "thumbnails": [
+      {
+        "file": "thumbnails/arena-51354913-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/arena-51354913-960.webp",
+        "width": 960
+      }
     ]
   },
   {
@@ -325,6 +502,18 @@
       {
         "label": "View original image",
         "url": "https://d2w9rnfcy7mm78.cloudfront.net/50968619/original_a4d8dce013222b1da06c284c36c1b011.jpg?1790899036?bc=0"
+      }
+    ],
+    "width": 1200,
+    "height": 1600,
+    "thumbnails": [
+      {
+        "file": "thumbnails/arena-50968619-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/arena-50968619-960.webp",
+        "width": 960
       }
     ]
   },
@@ -340,6 +529,18 @@
         "label": "View project",
         "url": "https://mo-gymnasium.farama.org/"
       }
+    ],
+    "width": 2400,
+    "height": 640,
+    "thumbnails": [
+      {
+        "file": "thumbnails/mo-gymnasium-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/mo-gymnasium-960.webp",
+        "width": 960
+      }
     ]
   },
   {
@@ -354,15 +555,128 @@
         "label": "View project",
         "url": "https://stable-retro.farama.org/"
       }
+    ],
+    "width": 2400,
+    "height": 640,
+    "thumbnails": [
+      {
+        "file": "thumbnails/stable-retro-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/stable-retro-960.webp",
+        "width": 960
+      }
     ]
   },
   {
     "slug": "zion",
     "title": "Zion",
     "medium": "Painting",
-    "file": "zion.webp",
+    "file": "zion-portfolio.webp",
     "description": "",
     "thoughtProcess": [],
-    "links": []
+    "links": [],
+    "width": 1600,
+    "height": 1300,
+    "thumbnails": [
+      {
+        "file": "thumbnails/zion-portfolio-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/zion-portfolio-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  {
+    "slug": "oranges",
+    "title": "Oranges",
+    "medium": "Painting",
+    "file": "oranges-portfolio-v2.webp",
+    "description": "",
+    "thoughtProcess": [],
+    "links": [],
+    "width": 1200,
+    "height": 1600,
+    "thumbnails": [
+      {
+        "file": "thumbnails/oranges-portfolio-v2-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/oranges-portfolio-v2-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  {
+    "slug": "orange-flowers",
+    "title": "Orange flowers",
+    "medium": "Painting",
+    "file": "orange-flowers-portfolio.webp",
+    "description": "",
+    "thoughtProcess": [],
+    "links": [],
+    "width": 1162,
+    "height": 1600,
+    "thumbnails": [
+      {
+        "file": "thumbnails/orange-flowers-portfolio-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/orange-flowers-portfolio-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  {
+    "slug": "cows",
+    "title": "Cows",
+    "medium": "Painting",
+    "file": "cows-portfolio-v2.webp",
+    "description": "",
+    "thoughtProcess": [],
+    "links": [
+      {
+        "label": "View on Are.na",
+        "url": "https://www.are.na/block/52668021"
+      }
+    ],
+    "width": 1202,
+    "height": 1600,
+    "thumbnails": [
+      {
+        "file": "thumbnails/cows-portfolio-v2-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/cows-portfolio-v2-960.webp",
+        "width": 960
+      }
+    ]
+  },
+  {
+    "slug": "oranges-ii",
+    "title": "Oranges II",
+    "medium": "Painting",
+    "file": "oranges-study.webp",
+    "description": "",
+    "thoughtProcess": [],
+    "links": [],
+    "width": 1800,
+    "height": 2400,
+    "thumbnails": [
+      {
+        "file": "thumbnails/oranges-study-480.webp",
+        "width": 480
+      },
+      {
+        "file": "thumbnails/oranges-study-960.webp",
+        "width": 960
+      }
+    ]
   }
 ]

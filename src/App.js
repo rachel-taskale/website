@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { projects } from './content';
-import { artworks as collection, artImage, canonicalStory, storyForHash, ReadNotes, ArtworkStory } from './ArtworkStories';
+import { artworks as collection, artImage, artSrcSet, canonicalStory, storyForHash, ReadNotes, ArtworkStory } from './ArtworkStories';
 import './App.css';
 export { projects } from './content';
+
+const featuredIndices = [1, 2, 3, 26, 6, 4, 25, 17, 18, 19, 16, 22];
 
 const extraIndices = [5, 7, 8, 9, 10, 11, 12, 20, 21, 13, 14, 15];
 
@@ -33,11 +35,20 @@ function useActiveProject() {
 }
 
 
-function Artwork({ index, onNavigate }) {
+function Artwork({ index, onNavigate, className, focusRef, sizes = '(min-width: 1240px) 344px, (min-width: 761px) 33vw, 50vw' }) {
   const artwork = collection[index];
-  return <figure>
+  return <figure className={className} ref={focusRef} tabIndex={focusRef ? -1 : undefined}>
     <button type="button" className="art-button" data-art={index} aria-label={`Read about ${canonicalStory(index).title}`}>
-      <img src={artImage(artwork.file)} alt={artwork.title} loading="lazy" />
+      <img
+        src={artImage(artwork.thumbnails?.[0]?.file || artwork.file)}
+        srcSet={artSrcSet(artwork)}
+        sizes={sizes}
+        width={artwork.width}
+        height={artwork.height}
+        alt={artwork.title}
+        loading="lazy"
+        decoding="async"
+      />
     </button>
     <figcaption className="caption">{artwork.title}<ReadNotes index={index} onNavigate={onNavigate} /></figcaption>
   </figure>;
@@ -69,7 +80,7 @@ export default function App() {
   const activeId = useActiveProject();
   const [selected, setSelected] = useState(null);
   const [hash, setHash] = useState(window.location.hash);
-  const [visibleCount, setVisibleCount] = useState(0);
+  const [{ visibleCount, batchStart }, setGallery] = useState({ visibleCount: 0, batchStart: 0 });
   const story = storyForHash(hash);
   const headingRef = useRef(null);
   const returnPosition = useRef(null);
@@ -112,7 +123,7 @@ export default function App() {
 <main id="main" hidden={!!story}>
 <section className="hero" aria-labelledby="intro-title">
   <div className="hero-copy"><h1 id="intro-title">I’m Rachel</h1><p className="intro">I’m an engineer and artist. I make things to understand the world around me, work through my thoughts, and try out new approaches.</p><nav className="hero-links" aria-label="Professional links"><a href="https://docs.google.com/document/d/1lrs6NtBp28DJeWjRg3X2ZvDaU9CjjJ3CYRKNe66S8sI/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a><a href="https://github.com/rachel-taskale" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/racheltaskale/" target="_blank" rel="noopener noreferrer">LinkedIn</a></nav></div>
-  <figure className="hero-art"><button className="art-button" data-art="0" aria-label="Read about Fire escape"><img src={artImage('arena-50968629.webp')} alt="Painting of a green apartment building, fire escapes, and a figure at a window" width="1388" height="1440" /></button><figcaption className="caption">Fire escape · <ReadNotes index={0} onNavigate={rememberPosition} /></figcaption></figure>
+  <figure className="hero-art"><button className="art-button" data-art="0" aria-label="Read about Fire escape"><img src={artImage(collection[0].file)} srcSet={artSrcSet(collection[0])} sizes="(min-width: 1240px) 420px, (min-width: 1001px) 34vw, (min-width: 651px) 340px, calc(100vw - 98px)" alt="Painting of a green apartment building, fire escapes, and a figure at a window" width={collection[0].width} height={collection[0].height} decoding="async" /></button><figcaption className="caption">Fire escape · <ReadNotes index={0} onNavigate={rememberPosition} /></figcaption></figure>
 </section>
 <section id="work" className="work-section" aria-labelledby="work-title">
   <aside className="work-aside"><div className="work-index"><h2 id="work-title">Engineering</h2><nav aria-label="Engineering projects"><a href="#middesk" aria-current={activeId === 'middesk' ? 'location' : undefined}>Middesk</a><a href="#runway" aria-current={activeId === 'runway' ? 'location' : undefined}>Runway</a><a href="#broadridge" aria-current={activeId === 'broadridge' ? 'location' : undefined}>Broadridge</a></nav></div></aside>
@@ -138,28 +149,31 @@ export default function App() {
   </div>
 </section>
 <section id="art" className="art-section" aria-labelledby="art-title">
-  <header className="art-heading"><h2 id="art-title">Paintings &<br />sketchbook pages</h2><nav aria-label="Art profiles"><a href="https://www.are.na/rachel-taskale" target="_blank" rel="noopener noreferrer">Are.na</a><a href="https://instagram.com/art_by_task" target="_blank" rel="noopener noreferrer">Instagram</a></nav></header>
-  <div className="art-composition">
-    <figure className="piece piece-tree"><button type="button" className="art-button" data-art="16" aria-label="Read about A Japanese tea garden tree"><img src={artImage('japanese-tea-garden-tree.jpg')} alt="A Japanese tea garden tree" width="2048" height="2048" loading="lazy" /></button><figcaption className="caption"><span>A Japanese tea garden tree</span><ReadNotes index={16} onNavigate={rememberPosition} /></figcaption></figure>
-    <figure className="piece piece-zion"><button type="button" className="art-button" data-art="22" aria-label="Read about Zion"><img src={artImage('zion.webp')} alt="Zion" width="2000" height="1631" loading="lazy" /></button><figcaption className="caption"><span>Zion</span><ReadNotes index={22} onNavigate={rememberPosition} /></figcaption></figure>
-    <figure className="piece piece-landscape-a"><button type="button" className="art-button" data-art="17" aria-label="Read about Coastal hills"><img src={artImage('arena-51355017.webp')} alt="Coastal hills" width="1200" height="1600" loading="lazy" /></button><figcaption className="caption"><span>Coastal hills</span><ReadNotes index={17} onNavigate={rememberPosition} /></figcaption></figure>
-    <figure className="piece piece-landscape-b"><button type="button" className="art-button" data-art="18" aria-label="Read about Coastal path"><img src={artImage('arena-51354913.webp')} alt="Coastal path" width="1200" height="1600" loading="lazy" /></button><figcaption className="caption"><span>Coastal path</span><ReadNotes index={18} onNavigate={rememberPosition} /></figcaption></figure>
-    <figure className="piece piece-landscape-c"><button type="button" className="art-button" data-art="19" aria-label="Read about Lake study"><img src={artImage('arena-50968619.webp')} alt="Lake study" width="1200" height="1600" loading="lazy" /></button><figcaption className="caption"><span>Lake study</span><ReadNotes index={19} onNavigate={rememberPosition} /></figcaption></figure>
-    <figure className="piece piece-pink"><button className="art-button" data-art="1" aria-label="Read about Pink flower study"><img src={artImage('arena-50439888.webp')} alt="Pink flower painted in a spiral-bound sketchbook" width="1059" height="1440" loading="lazy" /></button><figcaption className="caption"><span>Pink flower study</span><ReadNotes index={1} onNavigate={rememberPosition} /></figcaption></figure>
-    <figure className="piece piece-green"><button className="art-button" data-art="3" aria-label="Read about Green & magenta"><img src={artImage('arena-50439887.webp')} alt="Magenta flower and green foliage on a sketchbook page" width="1080" height="1440" loading="lazy" /></button><figcaption className="caption"><span>Green & magenta</span><ReadNotes index={3} onNavigate={rememberPosition} /></figcaption></figure>
-    <figure className="piece piece-brooklyn"><button className="art-button" data-art="6" aria-label="Read about The faces of Brooklyn"><img src={artImage('arena-50968856.webp')} alt="A drawing of Brooklyn characters, buildings, and street details" width="1440" height="1080" loading="lazy" /></button><figcaption className="caption"><span>The faces of Brooklyn</span><ReadNotes index={6} onNavigate={rememberPosition} /></figcaption></figure>
-    <figure className="piece piece-red"><button className="art-button" data-art="2" aria-label="Read about Red flower study"><img src={artImage('arena-50439889.webp')} alt="Red flower and green leaves painted on textured paper" width="1080" height="1440" loading="lazy" /></button><figcaption className="caption"><span>Red flower study</span><ReadNotes index={2} onNavigate={rememberPosition} /></figcaption></figure>
-    <figure className="piece piece-portrait"><button className="art-button" data-art="4" aria-label="Read about Portrait study"><img src={artImage('arena-50968843.webp')} alt="Expressive portrait drawing on loose paper" width="1080" height="1440" loading="lazy" /></button><figcaption className="caption"><span>Portrait study</span><ReadNotes index={4} onNavigate={rememberPosition} /></figcaption></figure>
+  <header className="art-heading"><h2 id="art-title">Paintings &<br />sketchbook pages</h2><nav aria-label="Art profiles"><a href="https://racheltaskaleart.com" target="_blank" rel="noopener noreferrer">Shop</a><a href="https://www.are.na/rachel-taskale" target="_blank" rel="noopener noreferrer">Are.na</a><a href="https://instagram.com/art_by_task" target="_blank" rel="noopener noreferrer">Instagram</a></nav></header>
+  <div className="art-featured-pair">
+    {[23, 24].map(index => <Artwork key={collection[index].file} index={index} onNavigate={rememberPosition} sizes="(min-width: 1240px) 528px, 50vw" />)}
+  </div>
+  <div className="art-composition" id="artwork-grid">
+    {featuredIndices.map(index => <Artwork className="piece" key={collection[index].file} index={index} onNavigate={rememberPosition} />)}
+    {extraIndices.slice(0, visibleCount).map((index, i) => <Artwork
+      className="piece"
+      key={collection[index].file}
+      index={index}
+      onNavigate={rememberPosition}
+      focusRef={i === batchStart ? loadFocus : undefined}
+    />)}
   </div>
   <div className={'more-art' + (visibleCount ? ' has-loaded-art' : '')}>
-    <div className="more-grid" id="more-grid">{extraIndices.slice(0,visibleCount).map((index,i) => <div key={collection[index].file} ref={i === (visibleCount <= 6 ? 0 : 6) ? loadFocus : null} tabIndex={-1}><Artwork index={index} onNavigate={rememberPosition} /></div>)}</div>
-    {visibleCount < extraIndices.length && <div className="load-more-controls"><button type="button" id="load-more-art" aria-controls="more-grid" onClick={() => setVisibleCount(count => Math.min(count+6,extraIndices.length))}>Load more</button></div>}
-    <p className="load-more-status" role="status" aria-live="polite">{visibleCount ? `${visibleCount} more artworks loaded. ${extraIndices.length-visibleCount} remaining.` : ''}</p>
+    {visibleCount < extraIndices.length && <div className="load-more-controls"><button type="button" id="load-more-art" aria-controls="artwork-grid" onClick={() => setGallery(current => ({
+      visibleCount: Math.min(current.visibleCount + 6, extraIndices.length),
+      batchStart: current.visibleCount
+    }))}>Load more</button></div>}
+    <p className="load-more-status" role="status" aria-live="polite">{visibleCount ? (visibleCount === extraIndices.length ? 'All artwork loaded.' : `${visibleCount - batchStart} more artworks loaded. ${extraIndices.length - visibleCount} remaining.`) : ''}</p>
   </div>
 </section>
 </main>
 {story && <ArtworkStory story={story} onEnlarge={setSelected} headingRef={headingRef} />}
-<footer id="contact" className="site-footer"><div><h2>Say hello</h2><a className="email" href="mailto:racheltaskale@gmail.com">racheltaskale@gmail.com</a><nav className="footer-links" aria-label="Social and professional links"><a href="https://www.linkedin.com/in/racheltaskale/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://docs.google.com/document/d/1lrs6NtBp28DJeWjRg3X2ZvDaU9CjjJ3CYRKNe66S8sI/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a><a href="https://github.com/rachel-taskale" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://instagram.com/art_by_task" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.are.na/rachel-taskale" target="_blank" rel="noopener noreferrer">Are.na</a></nav></div><img className="footer-drawing" src={artImage('arena-50968860.webp')} alt="Rachel’s hand-drawn character making a peace sign" width="982" height="1440" /></footer>
+<footer id="contact" className="site-footer"><div><h2>Say hello</h2><a className="email" href="mailto:racheltaskale@gmail.com">racheltaskale@gmail.com</a><nav className="footer-links" aria-label="Social and professional links"><a href="https://racheltaskaleart.com" target="_blank" rel="noopener noreferrer">Shop</a><a href="https://www.linkedin.com/in/racheltaskale/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://docs.google.com/document/d/1lrs6NtBp28DJeWjRg3X2ZvDaU9CjjJ3CYRKNe66S8sI/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a><a href="https://github.com/rachel-taskale" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://instagram.com/art_by_task" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.are.na/rachel-taskale" target="_blank" rel="noopener noreferrer">Are.na</a></nav></div><img className="footer-drawing" src={artImage('arena-50968860.webp')} alt="Rachel’s hand-drawn character making a peace sign" width="982" height="1440" /></footer>
 </div>
     <ArtworkViewer selected={selected} onClose={() => setSelected(null)} />
   </>;

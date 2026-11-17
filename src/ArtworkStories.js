@@ -2,6 +2,12 @@ import React from 'react';
 import stories from './artwork-stories.json';
 export const artworks = stories.map(story => ({...story, title: story.galleryTitle || story.title, medium: story.galleryMedium || story.medium}));
 export const artImage = file => `${process.env.PUBLIC_URL}/assets/art/${file}`;
+export const artSrcSet = artwork => [
+  ...(artwork.thumbnails || []),
+  { file: artwork.file, width: artwork.width }
+].filter(image => image.width)
+  .map(image => `${artImage(image.file)} ${image.width}w`)
+  .join(', ');
 export const canonicalStory = index => stories.find(story => story.slug === stories[index]?.group) || stories[index];
 export const storyForHash = hash => { const index = stories.findIndex(story => hash === '#art/' + story.slug || story.aliases?.some(alias => hash === '#art/' + alias)); return index < 0 ? undefined : canonicalStory(index); };
 const pages = stories.filter(story => !story.group);
@@ -22,9 +28,17 @@ export function ArtworkStory({story, onEnlarge, headingRef}) {
     <article className={'story-layout' + (group ? ' is-group' : '')}>
       <header className="story-heading"><h1 className="story-title" id="story-title" ref={headingRef} tabIndex={-1}>{story.title}</h1><p className="story-medium">{story.medium}</p></header>
       {group ? <div className="story-group-images">{group.map(memberIndex => <figure key={memberIndex}>
-        <button type="button" className="group-image-button" data-enlarge={memberIndex} aria-label={'View ' + artworks[memberIndex].title + ' image'} onClick={() => onEnlarge(memberIndex)}><img src={artImage(artworks[memberIndex].file)} alt={artworks[memberIndex].title} /></button>
+        <button type="button" className="group-image-button" data-enlarge={memberIndex} aria-label={'View ' + artworks[memberIndex].title + ' image'} onClick={() => onEnlarge(memberIndex)}><img
+          src={artImage(artworks[memberIndex].thumbnails?.[0]?.file || artworks[memberIndex].file)}
+          srcSet={artSrcSet(artworks[memberIndex])}
+          sizes={group.length === 3 ? '33vw' : '50vw'}
+          width={artworks[memberIndex].width}
+          height={artworks[memberIndex].height}
+          alt={artworks[memberIndex].title}
+          decoding="async"
+        /></button>
         <figcaption>{artworks[memberIndex].title}</figcaption>
-      </figure>)}</div> : <figure className="story-art"><img src={artImage(story.file)} alt={story.title} /><figcaption>{story.title} · {story.medium}</figcaption></figure>}
+      </figure>)}</div> : <figure className="story-art"><img src={artImage(story.file)} width={story.width} height={story.height} alt={story.title} decoding="async" /><figcaption>{story.title} · {story.medium}</figcaption></figure>}
       <div className="story-copy">
         {story.description && <div className="story-description"><p>{story.description}</p></div>}
         {!!story.thoughtProcess.length && <section className="story-notes" aria-labelledby="notes-heading"><h2 id="notes-heading">Thought process</h2>{story.thoughtProcess.map((text,i) => <p key={i}>{text}</p>)}</section>}

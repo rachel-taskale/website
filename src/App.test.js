@@ -59,6 +59,30 @@ test('connects the real contact address and preserves creative work', () => {
   expect(screen.queryByText('College post 01')).not.toBeInTheDocument();
 });
 
+test('load more appends artwork in order, reserves image space, and focuses the new batch', () => {
+  render(<App />);
+  const grid = document.getElementById('artwork-grid');
+  const originalCards = Array.from(grid.children);
+  originalCards.forEach(card => {
+    const image = within(card).getByRole('img');
+    expect(Number(image.getAttribute('width'))).toBeGreaterThan(0);
+    expect(Number(image.getAttribute('height'))).toBeGreaterThan(0);
+    expect(image).toHaveAttribute('srcset');
+  });
+
+  fireEvent.click(screen.getByRole('button', { name: 'Load more' }));
+  expect(Array.from(grid.children).slice(0, originalCards.length)).toEqual(originalCards);
+  expect(grid.children).toHaveLength(originalCards.length + 6);
+  expect(grid.children[originalCards.length]).toHaveFocus();
+  expect(screen.getByRole('status')).toHaveTextContent('6 more artworks loaded. 6 remaining.');
+
+  fireEvent.click(screen.getByRole('button', { name: 'Load more' }));
+  expect(grid.children).toHaveLength(originalCards.length + 12);
+  expect(grid.children[originalCards.length + 6]).toHaveFocus();
+  expect(screen.queryByRole('button', { name: 'Load more' })).not.toBeInTheDocument();
+  expect(screen.getByRole('status')).toHaveTextContent('All artwork loaded.');
+});
+
 test('cancels pending scroll work on unmount', () => {
   const { unmount } = render(<App />);
   fireEvent.scroll(window);
@@ -80,7 +104,7 @@ test('hands notes skip removed artwork and unfinished pages have no prompts', ()
   window.history.replaceState(null, '', '/#art/van-gogh-inspired-hands');
   render(<App />);
   expect(screen.getByText('This is one of the works I am most proud of.')).toBeInTheDocument();
-  expect(screen.getByRole('link', {name:'Next piece Fishy Illustration'})).toBeInTheDocument();
+  expect(screen.getByRole('link', {name:'Next piece Fish Illustration'})).toBeInTheDocument();
   expect(screen.queryByText('High on Self-Esteem')).not.toBeInTheDocument();
   act(() => { window.history.replaceState(null, '', '/#art/metaworld'); window.dispatchEvent(new HashChangeEvent('hashchange')); });
   expect(screen.queryByText(/placeholder|Your thoughts can go here/)).not.toBeInTheDocument();
@@ -94,7 +118,7 @@ test('both pixel plant routes open their shared writeup and skip duplicate pages
   expect(screen.getByRole('heading', {name:'Pixel plants'})).toBeInTheDocument();
   expect(screen.getByRole('button', {name:'View Pixel Cactus I image'})).toBeInTheDocument();
   expect(screen.getByRole('button', {name:'View Pixel Cactus II image'})).toBeInTheDocument();
-  expect(screen.getByRole('link', {name:'Previous piece Fishy Illustration'})).toBeInTheDocument();
+  expect(screen.getByRole('link', {name:'Previous piece Fish Illustration'})).toBeInTheDocument();
   expect(screen.getByRole('link', {name:'Next piece Kestrel'})).toBeInTheDocument();
   act(() => { window.history.replaceState(null, '', '/#art/pixel-cactus-i'); window.dispatchEvent(new HashChangeEvent('hashchange')); });
   expect(screen.getByRole('heading', {name:'Pixel plants'})).toBeInTheDocument();
